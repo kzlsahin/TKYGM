@@ -34,8 +34,7 @@ function SurveyForm() {
                 <article>
                     <div className="article-banner">
                     </div>
-                    <div className="article-body">
-                        <table>
+                        <table className="article-body">
                             <tbody>
                             <tr>
                                 <td>
@@ -65,8 +64,7 @@ function SurveyForm() {
                                 </td>
                             </tr>
                             </tbody>
-                        </table>
-                    </div>
+                        </table>                    
                 </article>
             </section>
             <section className="survey-questionaries">

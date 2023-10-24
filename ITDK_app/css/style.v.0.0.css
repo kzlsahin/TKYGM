@@ -18,7 +18,7 @@ html:fullscreen {
 }
 
 body {
-  padding-top: 2em;
+  padding: 1em;
   background-color: var(--main-bg-color);
   color: var(--text-color);
   width: 100%;
@@ -34,7 +34,8 @@ body {
 }
 
 table {
-  border-collapse: collapse;;
+  border-collapse: collapse;
+  width: 100%;
 }
 .survey-header {
   font-weight: 300;
@@ -80,6 +81,7 @@ article {
 .head-question {
   padding: 0.5em;
   font-weight: bold;
+  width: 100%;
 }
 
 select {
@@ -98,6 +100,14 @@ select::-ms-expand {
 }
 .img-inp {
   visibility: hidden;
+}
+
+tbody {
+  width: 100%;
+}
+tr{
+  width: 100%;
+
 }
 td{
   border: solid 1px black;
