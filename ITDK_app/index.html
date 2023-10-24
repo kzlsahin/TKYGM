@@ -16,8 +16,10 @@
     <link rel="manifest" href="manifest.webmanifest">
     <link href="css/style.v.0.0.css" rel="stylesheet" type="text/css">
 
-    <script type="text/javascript" src="js/controls.v.0.0.js"></script>
-    <script type="text/javascript" src="js/core.js"></script>
+
+   
+
+    <!-- Don't use this in production: -->
 </head>
 
 <body>
@@ -29,109 +31,17 @@
         title="Tersane, Tekne İmal ve Çekek Yeri Yönetmeliği'nin 19'uncu maddesinin 6'ıncı fıkrası / 12'nci maddenin 1'inci fıkrası kapsamında">
         İnceleme, Tespit ve Denetim Komisyonu Denetim Raporu*
     </h1>
-    <div class="survey-form">
-        <section class="survey-header">
-            <div>
-                <Label>TESIS ADI:
-                    <input type="text" placeholder="Tesis Adını Girin"></p>
-                </label>
-            </div>
-            <div>
-                <Select id="survey-type">
-                    <option value="0">İşletme İzni Belgesi Denetimi</option>
-                    <option value="1">Kısmi İşletme İzni Belgesi Denetimi</option>
-                    <option value="2">Ara Denetim</option>
-                </Select>
-                <Select id="facility-type">
-                    <option value="0">Tersane</option>
-                    <option value="1">Tekne İmal Yeri</option>
-                    <option value="2">Çekek Yeri</option>
-                </Select>
-                <Select id="floating-dock-status">
-                    <option value="0">Yüzer Havuz Mevcut</option>
-                    <option value="1">Yüzer Havuz Mevcut Değil</option>
-                </Select>
-                <input type="date" id="document-date">
-            </div>
-        </section>
-        <section class="survey-prerequisites">
-            <article>
-                <div class="article-banner">
-                </div>
-                <div class="article-body">
-                    <table>
-                        <tr>
-                            <td>
-                                Tesis adresi
-                            </td>
-                            <td>
-                                <input id="facility-name" type="text">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Denetim sırasında Komisyona eşlik eden tesis işleticisi/yetkilendirilmiş kişi bilgisi
-                            </td>
-                            <td>
-                                <input id="representative-person-name" type="text">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                İTDK ücreti ile ilgili makbuz Ek 50 olarak kaydedilir.
-                            </td>
-                            <td>
-                                <select id="payment">
-                                    <option value="payed">Yatırıldı</option>
-                                    <option value="not-payed">Yatırılmadı</option>
-                                </select>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </article>
-        </section>
-        <section class="survey-questionaries">
-            <article id="q-1">
-                <div class="article-banner">
-                    <p>1</p>
-                </div>
-                <table class="article-body">
-                    <tr class="questionary-item head-question">
-                        <td colspan="2">Sanayi veritabanı programına kayıtlı mı? Bilgileri güncel mi? (Yönetmelik Md 18 (8) )</td> 
-                    </tr>
-                    <tr class="questionary-item">
-                        <td class="question">Ek 1 </td>
-                        <td class="Audit_Result"></td>
-                    </tr>
-                    <tr class="questionary-item">
-                        <td class="question">Firma adı ve adresi Ticaret Sicil Gazetesi ile uyumlu mu?</td>
-                        <td class="Audit_Result"></td>
-                    </tr>
-                    <tr class="questionary-item">
-                        <td class="question">Çalışan sayısı güncel mi? </td>
-                        <td class="Audit_Result"></td>
-                    </tr>
-                </table >
-            </article>
-
-            <article id="q-2">
-                <div class="article-banner">
-                    <p>2</p>
-                </div>
-                <div class="article-body">
-                    <div class="questionary-item head-question">
-                        Tüzel kişiliğe ait faaliyet konusuna uygun Ticaret Sicil Gazetesinin aslı veya idarece onaylı örneği, gerçek kişiye ait sicil belgesinin aslı veya idarece onaylı örneği ve T.C. kimlik numarası beyanı sunuldu mu? (Yönetmelik Md -11 1 (b) )
-                    </div>
-                    <div class="questionary-item">
-                        <p class="question">Ek 2</p>
-                        <div class="Audit_Result"></div>
-                    </div>
-                </div>
-            </article>
-
-        </section>
+    <div id="root">
     </div>
+    
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/javascript" src="js/controls.v.0.0.js"></script>
+    <script type="text/javascript" src="js/core.js"></script>
+    <script type="text/babel" src="js/components.js"></script>
+    <script type="text/babel" src="js/SurveyForm.jsx"></script>
+
 
     <!-- <script>
         if ('serviceWorker' in navigator) {
