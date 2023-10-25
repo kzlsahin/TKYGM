@@ -24,20 +24,6 @@ const Audit_Result = Object.freeze({
 "EK KONMADI": 7
 });
 
-// const AUDIT_RESULT = () => {
-//     let element = document.createElement('select');
-//     element.innerHTML = 
-//     `
-// <Select class="audit-result">
-//                             <option value=0>EK SUNULDU</option>
-//                             <option value=1>EK SUNULMADI</option>
-//                             <option value=2>UYGULAMA GÖRÜLMEDİ</option>
-//                             <option value=3>UYGULAMA/DOKÜMAN YETERSİZ</option>
-//                             <option value=4>EVET</option>
-//                             <option value=5>HAYIR</option>
-//                             <option value=6>UYGULAMASI YOK</option>
-//                             <option value=7>EK KONMADI</option>
-//                         </Select>
-// `;
-// return element;
-// };
+const GetImage = () => {
+    document.getElementById("img-inp-1").click();
+}

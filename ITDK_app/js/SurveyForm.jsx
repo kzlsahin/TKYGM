@@ -71,7 +71,6 @@ function SurveyForm() {
                 <article id="q-1">
                     <div onClick={clc} className="article-banner">
                         <p>1</p>
-                        <input id="img-inp-1" className="img-inp" type="file" accept="image/*" capture="camera" />
                     </div>
                     <table className="article-body">
                         <tbody>
@@ -97,7 +96,6 @@ function SurveyForm() {
                 <article id="q-2">
                     <div onClick={clc} className="article-banner">
                         <p>2</p>
-                        <input className="img-inp" type="file" accept="image/*" capture="camera" />
                     </div>
                     <table className="article-body">
                     <tbody>
