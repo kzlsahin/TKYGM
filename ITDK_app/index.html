@@ -31,6 +31,40 @@
         title="Tersane, Tekne İmal ve Çekek Yeri Yönetmeliği'nin 19'uncu maddesinin 6'ıncı fıkrası / 12'nci maddenin 1'inci fıkrası kapsamında">
         İnceleme, Tespit ve Denetim Komisyonu Denetim Raporu*
     </h1>
+    <input type="file" id="directoryInput" webkitdirectory directory>
+<button onclick="processDirectory()">Process Directory</button>
+
+<script>
+  async function processDirectory() {
+    try {
+      const directoryInput = document.getElementById("directoryInput");
+      const [directoryHandle] = directoryInput.files;
+
+      const allFiles = await getAllFiles(directoryHandle);
+      console.log(allFiles);
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  }
+
+  async function getAllFiles(directoryHandle) {
+    const allFiles = [];
+
+    async function processDirectoryRecursively(directoryHandle) {
+      const entries = await directoryHandle.getEntries();
+      for await (const entry of entries) {
+        if (entry.isFile) {
+          allFiles.push(entry);
+        } else if (entry.isDirectory) {
+          await processDirectoryRecursively(entry);
+        }
+      }
+    }
+
+    await processDirectoryRecursively(directoryHandle);
+    return allFiles;
+  }
+</script>
     <div id="root">
     </div>
     
