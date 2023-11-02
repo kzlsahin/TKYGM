@@ -4,8 +4,11 @@ const clc = () => {
 }
 
 function SurveyForm() {
-    return (
+    return (        
         <div className="survey-form">
+            <h1 title="Tersane, Tekne İmal ve Çekek Yeri Yönetmeliği'nin 19'uncu maddesinin 6'ıncı fıkrası / 12'nci maddenin 1'inci fıkrası kapsamında">
+        İnceleme, Tespit ve Denetim Komisyonu Denetim Raporu*
+    </h1>
             <section className="survey-header">
                 <div>
                     <label>TESIS ADI:

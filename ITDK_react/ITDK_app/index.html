@@ -16,9 +16,6 @@
     <link rel="manifest" href="manifest.webmanifest">
     <link href="css/style.v.0.0.css" rel="stylesheet" type="text/css">
 
-
-   
-
     <!-- Don't use this in production: -->
 </head>
 
@@ -26,16 +23,14 @@
     <div class="div-banner">
         TKYGM
     </div>
-
-    <h1
-        title="Tersane, Tekne İmal ve Çekek Yeri Yönetmeliği'nin 19'uncu maddesinin 6'ıncı fıkrası / 12'nci maddenin 1'inci fıkrası kapsamında">
-        İnceleme, Tespit ve Denetim Komisyonu Denetim Raporu*
-    </h1>
+    <div id="root"></div>
+    
     <input id="img-inp-1" className="img-inp" type="file" accept="image/*" capture="camera" />
     <input type="file" id="directoryInput" webkitdirectory directory>
 <button onclick="processDirectory()">Process Directory</button>
 
 <script>
+
   async function processDirectory() {
     try {
       const directoryInput = document.getElementById("directoryInput");
@@ -72,7 +67,6 @@
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script type="text/javascript" src="js/controls.v.0.0.js"></script>
     <script type="text/javascript" src="js/core.js"></script>
     <script type="text/babel" src="js/components.js"></script>
     <script type="text/babel" src="js/SurveyForm.jsx"></script>
