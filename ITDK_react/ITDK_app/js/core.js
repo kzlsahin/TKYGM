@@ -27,3 +27,17 @@ const Audit_Result = Object.freeze({
 const GetImage = () => {
     document.getElementById("img-inp-1").click();
 }
+
+const DirectoryManager = {
+    directory : "",
+    handler : null,
+    options : {startIn : "documents", mode : "readwrite", id : "coredir"},
+    async newDirectory(){
+        this.handler = await window.showDirectoryPicker();
+        this.directory = this.handler.name;
+    }
+}
+
+const FileSavingManager = {
+
+}
