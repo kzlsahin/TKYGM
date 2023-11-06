@@ -6,14 +6,14 @@ const clc = (qID) => {
 
 function SurveyForm() {
     return (        
-        <div className="survey-form">
+        <div className="survey-form" data-version="0.0.0">
             <h1 title="Tersane, Tekne İmal ve Çekek Yeri Yönetmeliği'nin 19'uncu maddesinin 6'ıncı fıkrası / 12'nci maddenin 1'inci fıkrası kapsamında">
         İnceleme, Tespit ve Denetim Komisyonu Denetim Raporu*
     </h1>
             <section className="survey-header">
                 <div>
                     <label>TESIS ADI:
-                        <input type="text" placeholder="Tesis Adını Girin"/>
+                        <input id="facility-name" type="text" placeholder="Tesis Adını Girin"/>
                     </label>
                 </div>
                 <div>
@@ -45,7 +45,7 @@ function SurveyForm() {
                                     Tesis adresi
                                 </td>
                                 <td>
-                                    <input id="facility-name" type="text" />
+                                    <input id="facility-address" type="text" />
                                 </td>
                             </tr>
                             <tr>
@@ -83,15 +83,15 @@ function SurveyForm() {
                         </tr>
                         <tr className="questionary-item">
                             <td className="question">Ek 1 </td>
-                            <td><AuditResult /></td>
+                            <td><AuditResult id="q-1-1"/></td>
                         </tr>
                         <tr className="questionary-item">
                             <td className="question">Firma adı ve adresi Ticaret Sicil Gazetesi ile uyumlu mu?</td>
-                            <td><AuditResult /></td>
+                            <td><AuditResult id="q-1-2"/></td>
                         </tr>
                         <tr className="questionary-item">
                             <td className="question">Çalışan sayısı güncel mi? </td>
-                            <td><AuditResult /></td>
+                            <td><AuditResult id="q-1-3"/></td>
                         </tr>
                         </tbody>
                     </table >
@@ -110,7 +110,7 @@ function SurveyForm() {
                         </tr>
                         <tr className="questionary-item">
                             <td className="question">Ek 2</td>
-                            <td><AuditResult /></td>
+                            <td><AuditResult id="q-2-1"/></td>
                         </tr>
                         </tbody>
                     </table >

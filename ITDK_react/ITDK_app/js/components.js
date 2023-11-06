@@ -1,6 +1,6 @@
-function AuditResult() {
+function AuditResult(props) {
     return (
-      <select>
+      <select id={props.id}>
         <option value="0">EK SUNULDU</option>
       <option value="1">EK SUNULMADI</option>
       <option value="2">UYGULAMA GÖRÜLMEDİ</option>
