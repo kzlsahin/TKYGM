@@ -99,7 +99,7 @@ select::-ms-expand {
   display: none;
 }
 .img-inp {
-  visibility: hidden;
+  opacity: 0;
 }
 
 tbody {

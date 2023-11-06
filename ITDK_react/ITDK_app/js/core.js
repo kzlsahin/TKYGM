@@ -24,9 +24,28 @@ const Audit_Result = Object.freeze({
 "EK KONMADI": 7
 });
 
-const GetImage = () => {
-    document.getElementById("img-inp-1").click();
+const getImage = (qID) => {
+    console.log("get image");
+    let inp = document.getElementById("img-inp-1");
+    console.log(inp);
+    inp.dataset.qId = qID;
+    inp.click();
 }
+
+const saveImage = async (event) => {
+    let element = event.target;
+    let dir = "EK-" + element.dataset.qId;
+    console.log(dir);
+    let file = element.files[0];
+    let dirHandle = await DirectoryManager.getDirectory(dir);
+    await DirectoryManager.saveFile(dirHandle, file.name, file);
+};
+
+const newSurvey = () => {
+    DirectoryManager.newDirectory();
+    let root = document.getElementById("root");
+    root.style.display = "block";
+};
 
 const DirectoryManager = {
     directory : "",
@@ -35,9 +54,27 @@ const DirectoryManager = {
     async newDirectory(){
         this.handler = await window.showDirectoryPicker();
         this.directory = this.handler.name;
+    },
+    async getDirectory(dirName){
+        let dirHandle = await this.handler.getDirectoryHandle(dirName, {create:true});
+        return dirHandle;
+    },
+    async saveFile(directoryHandler, fileName, file){
+        let fHandle = await directoryHandler.getFileHandle(fileName, {create:true});
+        let writable = await fHandle.createWritable();
+        await writable.write(file);
+        writable.close();
     }
-}
+};
 
 const FileSavingManager = {
 
-}
+};
+
+const onStartup = () => {
+    let root = document.getElementById("root");
+    root.style.display= "none";
+};
+
+window.addEventListener("load", onStartup);
+

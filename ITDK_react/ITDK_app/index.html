@@ -25,9 +25,9 @@
     </div>
     <div id="root"></div>
     
-    <input id="img-inp-1" className="img-inp" type="file" accept="image/*" capture="camera" />
+    <input id="img-inp-1" onchange="saveImage(event)" class="img-inp" type="file" accept="image/*" capture="camera" />
     <input type="file" id="directoryInput" webkitdirectory directory>
-<button onclick="DirectoryManager.newDirectory()">Process Directory</button>
+<button onclick="newSurvey()">New Survey</button>
 
 <script>
 

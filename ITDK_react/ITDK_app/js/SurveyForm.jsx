@@ -1,6 +1,7 @@
 
-const clc = () => {
-    document.getElementById("img-inp-1").click();
+const clc = (qID) => {
+    console.log(qID);
+    getImage(qID);
 }
 
 function SurveyForm() {
@@ -72,7 +73,7 @@ function SurveyForm() {
             </section>
             <section className="survey-questionaries">
                 <article id="q-1">
-                    <div onClick={clc} className="article-banner">
+                    <div onClick={() => clc("1")} className="article-banner">
                         <p>1</p>
                     </div>
                     <table className="article-body">
@@ -97,7 +98,7 @@ function SurveyForm() {
                 </article>
 
                 <article id="q-2">
-                    <div onClick={clc} className="article-banner">
+                    <div onClick={() => clc("2")} className="article-banner">
                         <p>2</p>
                     </div>
                     <table className="article-body">

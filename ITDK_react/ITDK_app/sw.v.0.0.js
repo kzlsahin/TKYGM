@@ -22,7 +22,6 @@ const BASEURL = `https://kzlsahin.online/TKYGM/ITDK-v0`;
 const PRECACHE_URLS = [
   BASEURL + '/',
   BASEURL + '/css/style.v.0.0.css',
-  BASEURL + '/js/controls.v.0.0.js',
   BASEURL + '/images/UAB_Logo.png',
   './manifest.webmanifest',
 ];
