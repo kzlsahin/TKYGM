@@ -17,20 +17,9 @@ function SurveyForm() {
                     </label>
                 </div>
                 <div>
-                    <select id="survey-type">
-                        <option value="0">İşletme İzni Belgesi Denetimi</option>
-                        <option value="1">Kısmi İşletme İzni Belgesi Denetimi</option>
-                        <option value="2">Ara Denetim</option>
-                    </select>
-                    <select id="facility-type">
-                        <option value="0">Tersane</option>
-                        <option value="1">Tekne İmal Yeri</option>
-                        <option value="2">Çekek Yeri</option>
-                    </select>
-                    <select id="floating-dock-status">
-                        <option value="0">Yüzer Havuz Mevcut</option>
-                        <option value="1">Yüzer Havuz Mevcut Değil</option>
-                    </select>
+                    <SurveyType id="survet-type" />
+                    <FacilityType id="facility-type" />
+                    <FloatingDeckStatus id="floating-dock-status" />
                     <input type="date" id="document-date" />
                 </div>
             </section>

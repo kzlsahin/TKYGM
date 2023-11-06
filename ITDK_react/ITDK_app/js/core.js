@@ -1,14 +1,14 @@
-const SurveyType = Object.freeze({
+const SurveyTypeEnum = Object.freeze({
   Business_Permit: 0,
   Partial_Business_Permit: 1,
   Interim_Audit: 2,
 });
-const FacilityType = Object.freeze({
+const FacilityTypeEnum = Object.freeze({
   Shipyard: 0,
   Small_Shipyard: 1,
   Boatyard: 2,
 });
-const LoatingDockStatus = Object.freeze({
+const LoatingDockStatusEnum = Object.freeze({
   Present: 0,
   Absent: 1,
 });
