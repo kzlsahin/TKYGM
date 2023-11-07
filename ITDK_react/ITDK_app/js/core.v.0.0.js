@@ -81,6 +81,29 @@ const newSurvey = () => {
   showForm();
 };
 
+let opfsRoot;
+const newSurveyFromFile = async (event) => {
+  let element = event.target;
+  if( element.id == "directory-input"){
+    let files = element.files;
+    console.log(files);
+    opfsRoot = await navigator.storage.getDirectory();
+    const directoryHandle = await opfsRoot.getDirectoryHandle('project', {create: true});
+    for(let file in files){
+      
+      console.log("writing");
+      const nestedFileHandle = await directoryHandle.getFileHandle(file.webkitRelativePath, {create: true});
+      const writable = await nestedFileHandle.createWritable();
+      await writable.write(file);
+      writable.close();
+    }    
+  }
+  else{
+    let inp = document.getElementById("directory-input");
+    inp.click();
+  }
+};
+
 const saveSurvey = async () => {
     setState();
   let content = JSON.stringify(inputState);
