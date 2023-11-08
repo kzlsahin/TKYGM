@@ -113,6 +113,7 @@ const saveSurvey = async () => {
   setState();
   let content = JSON.stringify(inputState);
   await DirectoryManager.saveFile("survey.json", content);
+  await fm.DownloadFilesAsZip(DirectoryManager.handler, "TKYGM");
 };
 
 const openSurvey = async () => {
@@ -188,10 +189,10 @@ document
   .addEventListener("click", (event) => newSurveyFromFile(event));
 document
   .getElementById("btn-save-survey")
-  .addEventListener("click", saveSurvey());
+  .addEventListener("click", () => saveSurvey());
 document
   .getElementById("btn-open-survey")
-  .addEventListener("click", openSurvey());
+  .addEventListener("click", () =>openSurvey());
 document
   .getElementById("img-inp-1")
   .addEventListener("change", (event) => saveImage(event));
