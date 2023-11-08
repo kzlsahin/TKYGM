@@ -15,7 +15,9 @@
   <link rel="icon" HREF="images/UAB_Logo.png">
   <link rel="manifest" href="manifest.webmanifest">
   <link href="css/style.v.0.0.css" rel="stylesheet" type="text/css">
-
+  <script type="module" src="lib/jszip.js"></script>
+  <script src="lib/FileSaver.js"></script>
+  <script type="module" src="js/FileManager.js"></script>
   <!-- Don't use this in production: -->
 </head>
 
@@ -25,11 +27,11 @@
   </div>
   <div id="root"></div>
 
-  <input id="img-inp-1" onchange="saveImage(event)" class="hidden-input" type="file" accept="image/*" capture="camera" />
-  <input id="directory-input" onchange="newSurveyFromFile(event)" class="hidden-input" type="file" webkitdirectory directory>
-  <button onclick="newSurveyFromFile(event)">New Survey from Folder to Privite</button>
-  <button onclick="saveSurvey()">Save Survey</button>
-  <button onclick="openSurvey()">Open Survey</button>
+  <input id="img-inp-1" class="hidden-input" type="file" accept="image/*" capture="camera" />
+  <input id="directory-input" class="hidden-input" type="file" webkitdirectory directory>
+  <button id="btn-new-survey-from-file">New Survey from Folder to Privite</button>
+  <button id="btn-save-survey">Save Survey</button>
+  <button id="btn-open-survey">Open Survey</button>
 
   <script>
 
@@ -69,7 +71,7 @@
   <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-  <script type="text/javascript" src="js/core.v.0.0.js"></script>
+  <script type="module" src="js/core.v.0.0.js"></script>
   <script type="text/babel" src="js/components.v.0.0.js"></script>
   <script type="text/babel" src="js/SurveyForm.v.0.0.jsx"></script>
 

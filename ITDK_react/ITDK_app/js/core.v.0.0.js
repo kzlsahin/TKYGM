@@ -1,3 +1,5 @@
+import * as fm from "/js/FileManager.js";
+
 const SurveyTypeEnum = Object.freeze({
   Business_Permit: 0,
   Partial_Business_Permit: 1,
@@ -26,28 +28,28 @@ const Audit_Result = Object.freeze({
 
 let inputState = {};
 
-const setState = () =>{
-    inputState = {};
-    let inputs = document.getElementsByTagName("INPUT");
-    for(let inp of inputs){
-        inputState[inp.id] = inp.value;
-    }
-    let selectables = document.getElementsByTagName("SELECT");
-    for(let selectable of selectables){
-        inputState[selectable.id] = selectable.value;
-    }
-}
+const setState = () => {
+  inputState = {};
+  let inputs = document.getElementsByTagName("INPUT");
+  for (let inp of inputs) {
+    inputState[inp.id] = inp.value;
+  }
+  let selectables = document.getElementsByTagName("SELECT");
+  for (let selectable of selectables) {
+    inputState[selectable.id] = selectable.value;
+  }
+};
 
-const importState = (state) =>{
-    let inputs = document.getElementsByTagName("INPUT");
-    for(let inp of inputs) {
-        inp.value = state[inp.id] ?? "";
-    }
-    let selectables = document.getElementsByTagName("SELECT");
-    for(let selectable of selectables){
-        selectable.value = state[selectable.id] ?? "0";
-    }
-}
+const importState = (state) => {
+  let inputs = document.getElementsByTagName("INPUT");
+  for (let inp of inputs) {
+    inp.value = state[inp.id] ?? "";
+  }
+  let selectables = document.getElementsByTagName("SELECT");
+  for (let selectable of selectables) {
+    selectable.value = state[selectable.id] ?? "0";
+  }
+};
 
 const getImage = (qID) => {
   console.log("get image");
@@ -59,111 +61,117 @@ const getImage = (qID) => {
 
 const saveImage = async (event) => {
   let element = event.target;
-  let dir = "EK-" + element.dataset.qId;
   console.log(dir);
   let file = element.files[0];
-  let dirHandle = await DirectoryManager.getDirectory(dir);
-  await DirectoryManager.saveFile(dirHandle, file.name, file);
+  let fileName = "EK-" + element.dataset.qId + "/" + file.name;
+  await DirectoryManager.saveFile(fileName, file);
 };
 
 const showForm = () => {
-    let root = document.getElementById("root");
-    root.style.display = "block";
-}
-
-const hideForm = () => {
-    let root = document.getElementById("root");
-    root.style.display = "none";
-}
-
-const newSurvey = () => {
-  DirectoryManager.newDirectory();
-  showForm();
+  let root = document.getElementById("root");
+  root.style.display = "block";
 };
 
-let opfsRoot;
+const hideForm = () => {
+  let root = document.getElementById("root");
+  root.style.display = "none";
+};
+
+const newSurveyDirectory = async () => {
+  let opfsRoot = await navigator.storage.getDirectory();
+  let name = Date.now().toString();
+  let handle = await fm.GetDirectory(name, opfsRoot, true);
+  return handle;
+};
+
 const newSurveyFromFile = async (event) => {
   let element = event.target;
-  if( element.id == "directory-input"){
+  if (element?.id === "directory-input") {
+    console.log(element);
     let files = element.files;
-    console.log(files);
-    opfsRoot = await navigator.storage.getDirectory();
-    const directoryHandle = await opfsRoot.getDirectoryHandle('project', {create: true});
-    for(let file in files){
-      
+    const directoryHandle = await newSurveyDirectory();
+    await DirectoryManager.newDirectory(directoryHandle);
+    console.log(directoryHandle);
+    for (let file of files) {
       console.log("writing");
-      const nestedFileHandle = await directoryHandle.getFileHandle(file.webkitRelativePath, {create: true});
-      const writable = await nestedFileHandle.createWritable();
-      await writable.write(file);
-      writable.close();
-    }    
-  }
-  else{
+      console.log(file);
+      try {
+        await DirectoryManager.saveFile(file.webkitRelativePath, file);
+      } catch (err) {
+        console.log("Error:", err);
+        console.log("the document couldn't be read!");
+      }
+    }
+    //setTimeout(openSurvey(), 50);
+  } else {
     let inp = document.getElementById("directory-input");
     inp.click();
   }
 };
 
 const saveSurvey = async () => {
-    setState();
+  setState();
   let content = JSON.stringify(inputState);
-  await DirectoryManager.saveFile(
-    DirectoryManager.handler,
-    "survey.json",
-    content
-  );
+  await DirectoryManager.saveFile("survey.json", content);
 };
 
 const openSurvey = async () => {
-  await DirectoryManager.newDirectory();
-  DirectoryManager.readFile(DirectoryManager.handler, "survey.json").then(
-    (content) => {
-        inputState = JSON.parse(content) ?? "";
-        importState(inputState);
-        showForm();
-    },
-    (err) => {
-      console.error("Error:", err);
-      window.alert("the document couldn't be read!");
+  try {
+    let directoryHandle = DirectoryManager.handler;
+    let file = await fm.GetFile(directoryHandle, "survey.json");
+    if (file) {
+      let content = await file.text();
+      inputState = JSON.parse(content) ?? "";
+      importState(inputState);
+      showForm();
     }
-  );
+  } catch (err) {
+    console.log("Error:", err);
+    console.log("the document couldn't be read!");
+  }
 };
 
 const DirectoryManager = {
   directory: "",
   handler: null,
-  options: { startIn: "documents", mode: "readwrite", id: "coredir" },
-  async newDirectory() {
-    this.handler = await window.showDirectoryPicker();
-    this.directory = this.handler.name;
+  async newDirectory(dirHandler) {
+    if (!dirHandler) {
+      console.log("DİRECTORY HANDLER İS NULL");
+      return;
+    }
+    this.handler = dirHandler;
+    this.directory = dirHandler.name;
   },
-  async getDirectory(dirName) {
-    let dirHandle = await this.handler.getDirectoryHandle(dirName, {
-      create: true,
-    });
+  async getSubDirectory(path) {
+    if (!this.handler) {
+      console.log("directory is null");
+      return;
+    }
+    let dirHandle = await fm.GetDirectory(path, this.handler, false);
     return dirHandle;
   },
-  async saveFile(directoryHandler, fileName, file) {
-    let fHandle = await directoryHandler.getFileHandle(fileName, {
-      create: true,
-    });
-    let writable = await fHandle.createWritable();
-    await writable.write(file);
-    writable.close();
+  async createSubDirectory(path) {
+    if (!this.handler) {
+      console.log("directory is null");
+      return;
+    }
+    let dirHandle = await fm.GetDirectory(path, this.handler, true);
+    return dirHandle;
   },
-  async readFile(directoryHandler, fileName) {
-    let fHandle = await directoryHandler.getFileHandle(fileName);
-    console.log(fHandle);
-    if (!fHandle) {
-      console.log("file handle is not available");
-      return null;
+  async saveFile(fileName, file) {
+    if (!this.handler) {
+      console.log("directory is null");
+      return;
     }
-    let file = await fHandle.getFile();
-    if (!file) {
-      console.log("file is not available");
-      return null;
+    await fm.SaveFile(this.handler, fileName, file);
+  },
+  async getFile(fileName) {
+    if (!this.handler) {
+      console.log("directory is null");
+      return;
     }
-    return await file.text();
+    let f = await fm.GetFile(this.handler, fileName);
+    return f;
   },
 };
 
@@ -174,3 +182,19 @@ const onStartup = () => {
 };
 
 window.addEventListener("load", onStartup);
+
+document
+  .getElementById("btn-new-survey-from-file")
+  .addEventListener("click", (event) => newSurveyFromFile(event));
+document
+  .getElementById("btn-save-survey")
+  .addEventListener("click", saveSurvey());
+document
+  .getElementById("btn-open-survey")
+  .addEventListener("click", openSurvey());
+document
+  .getElementById("img-inp-1")
+  .addEventListener("change", (event) => saveImage(event));
+document
+  .getElementById("directory-input")
+  .addEventListener("change", (event) => newSurveyFromFile(event));
