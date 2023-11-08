@@ -102,7 +102,7 @@ const newSurveyFromFile = async (event) => {
         console.log("the document couldn't be read!");
       }
     }
-    //setTimeout(openSurvey(), 50);
+    setTimeout(openSurvey(), 50);
   } else {
     let inp = document.getElementById("directory-input");
     inp.click();
@@ -117,21 +117,34 @@ const saveSurvey = async () => {
 };
 
 const openSurvey = async () => {
+  let res = false;
   try {
     let directoryHandle = DirectoryManager.handler;
-    let file = await fm.GetFile(directoryHandle, "survey.json");
+    let file = await fm.GetFile(directoryHandle, "TKYGM/survey.json");
     if (file) {
+      console.log(file);
       let content = await file.text();
-      inputState = JSON.parse(content) ?? "";
+      console.log(content);
+
+      inputState = JSON.parse(content) ?? {};
+      console.log("open new survey 1");
+
       importState(inputState);
+      console.log("open new survey");
       showForm();
+      return true;
     }
   } catch (err) {
     console.log("Error:", err);
     console.log("the document couldn't be read!");
   }
+  openNewSurvey();
+  return res;
 };
 
+const openNewSurvey = () => {
+  showForm();
+}
 const DirectoryManager = {
   directory: "",
   handler: null,
