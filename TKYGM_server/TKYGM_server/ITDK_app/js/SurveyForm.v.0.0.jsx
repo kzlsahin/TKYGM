@@ -130,7 +130,30 @@ function SurveyForm() {
                             { id: "q-7-3", head: "Yapı kullanma izni belgelerinde yer alan taban alanı bilgileri ile tesis alanı organizasyonu ve yerleşim planındakiler uyumlu mu?" },
                             { id: "q-7-4", head: "Yapı kayıt belgesi ve belgeye başvuru aşamasında ilgili sisteme yüklenen yapı fotoğrafı sunulmuş mu? Belge ve fotoğraf ile fiili durum uyumlu mu?" },
                         ]} />
+
             </section>
+            <table>
+                <th>
+                    <td></td>
+                    <td>Adı Soyadı</td>
+                    <td>Görevlendirildiği Birim / Unvan / İmza</td>
+                </th>
+                <th>
+                    <td>Üye</td>
+                    <td></td>
+                    <td></td>
+                </th>
+                <th>
+                    <td>Üye</td>
+                    <td></td>
+                    <td></td>
+                </th>
+                <th>
+                    <td>Üye</td>
+                    <td></td>
+                    <td></td>
+                </th>
+            </table>
         </div>
     );
 }
