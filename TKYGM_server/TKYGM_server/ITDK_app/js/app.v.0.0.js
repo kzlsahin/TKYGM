@@ -86,7 +86,7 @@ const newSurveyDirectory = async (name = "") => {
     let handle = await fm.GetDirectory(name, opfsRoot, true);
     return handle;
 };
-const newSurveyForm = () => {    
+const newSurveyForm = () => {
     if (root) {
         let emptyData = {};
         importData(emptyData);
@@ -167,7 +167,7 @@ const SaveSurvey = async () => {
         console.log("Error:", err);
         console.log("the document couldn't be saved!");
     }
-    
+
 };
 
 const DirectoryManager = {
@@ -237,6 +237,18 @@ const LoadSurveyFromFile = () => {
     }
 }
 
+const onBeforePrint = (event) => {
+    let controlDiv = document.getElementById("controls-widget");
+    controlDiv.style.visibility = "hidden";
+}
+const onAfterPrint = (event) => {
+    let controlDiv = document.getElementById("controls-widget");
+    controlDiv.style.visibility = "visible";
+}
+const PrintSurvey = (event) => {
+    window.print();
+}
+
 const _waitDialog = async (d, f) => {
     if (d.open) {
         setTimeout(_waitDialog, 10, d, f);
@@ -260,10 +272,12 @@ const showDialog = (doBefore, doJob, cancel) => {
                     cancel();
             }
         });
-    
+
 }
 
 window.addEventListener("load", onStartup);
+window.addEventListener("beforeprint", onBeforePrint);
+window.addEventListener("afterprint", onAfterPrint);
 
 document
     .getElementById("btn-new-survey-from-file")
@@ -274,6 +288,9 @@ document
 document
     .getElementById("btn-open-survey")
     .addEventListener("click", () => OpenNewSurvey());
+document
+    .getElementById("btn-print-survey").
+    addEventListener("click", PrintSurvey);
 document
     .getElementById("img-inp-1")
     .addEventListener("change", (event) => saveImage(event));
