@@ -98,12 +98,73 @@ select {
 select::-ms-expand {
   display: none;
 }
-.img-inp {
-  opacity: 0;
+
+
+.hidden-controls{
+  visibility: hidden;
+  position :absolute;
 }
 
-.hidden-input{
-  opacity: 0;
+#controls-widget{
+  display: inline-block;
+  padding: 0;
+  width: 5ch;
+  height: 5ch;
+  overflow: hidden;
+}
+
+#controls-widget:hover { 
+  overflow: visible;
+  width: fit-content;
+  height: fit-content;
+}
+
+.widget-body {
+  padding : 0.5ch;
+  display: flex;
+  flex-flow:column nowrap;
+  justify-content: start;
+  align-items: start;
+  background-color: wheat;
+  border: 1px solid black;
+  border-radius: 0.5em;
+  transition: all ease-in 1s;
+  width: fit-content;
+  height: fit-content;
+}
+.widget-body > * {
+  margin : 1ch;
+  margin-top: 0.2ch;
+  margin-bottom: 0.2ch;
+}
+
+#controls-widget:hover .widget-cover {
+  display: none;
+}
+#controls-widget:hover .widget-body {
+  display: flex;
+}
+#controls-widget .widget-cover {
+  display: block;
+}
+#controls-widget .widget-body {
+  display: none;
+}
+.cover-line {
+  display: block;
+  margin-top : 0.2ch;
+  margin-bottom : 0.2ch;
+  background-color: black;
+  width : 90%;
+  height: 0.5ch;
+}
+
+.cover {
+  padding : 0.5ch;
+  display: block;
+  background-color:aquamarine;
+  width : 100%;
+  height: 100%;
 }
 
 tbody {

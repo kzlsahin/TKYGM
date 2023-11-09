@@ -1,53 +1,31 @@
 import * as fm from "/js/FileManager.js";
-export {GetImage};
 
-const SurveyTypeEnum = Object.freeze({
-  Business_Permit: 0,
-  Partial_Business_Permit: 1,
-  Interim_Audit: 2,
-});
-const FacilityTypeEnum = Object.freeze({
-  Shipyard: 0,
-  Small_Shipyard: 1,
-  Boatyard: 2,
-});
-const LoatingDockStatusEnum = Object.freeze({
-  Present: 0,
-  Absent: 1,
-});
-
-const Audit_Result = Object.freeze({
-  "EK SUNULDU": 0,
-  "EK SUNULMADI": 1,
-  "UYGULAMA GÖRÜLMEDİ": 2,
-  "UYGULAMA/DOKÜMAN YETERSİZ": 3,
-  EVET: 4,
-  HAYIR: 5,
-  "UYGULAMASI YOK": 6,
-  "EK KONMADI": 7,
-});
-
-let inputState = {};
-
-const setState = () => {
-  inputState = {};
-  let inputs = document.getElementsByTagName("INPUT");
+let survayData = {};
+const AppState = {
+  modified : true,
+  folderName : "",
+}
+const setData = () => {
+  survayData = {};
+  let inputs = document.getElementsByClassName("text-state");
   for (let inp of inputs) {
-    inputState[inp.id] = inp.value;
+    survayData[inp.id] = inp.value;
   }
-  let selectables = document.getElementsByTagName("SELECT");
+  let selectables = document.getElementsByClassName("selection-state");
   for (let selectable of selectables) {
-    inputState[selectable.id] = selectable.value;
+    survayData[selectable.id] = selectable.value;
   }
 };
 
-const importState = (state) => {
-  let inputs = document.getElementsByTagName("INPUT");
+const importData = (state) => {
+  let inputs = document.getElementsByClassName("text-state");
   for (let inp of inputs) {
     inp.value = state[inp.id] ?? "";
   }
-  let selectables = document.getElementsByTagName("SELECT");
+  let selectables = document.getElementsByClassName("selection-state");
   for (let selectable of selectables) {
+    console.log(state[selectable.id]);
+    console.log(selectable);
     selectable.value = state[selectable.id] ?? "0";
   }
 };
@@ -62,7 +40,6 @@ const GetImage = (qID) => {
 
 const saveImage = async (event) => {
   let element = event.target;
-  console.log(dir);
   let file = element.files[0];
   let fileName = "EK-" + element.dataset.qId + "/" + file.name;
   await DirectoryManager.saveFile(fileName, file);
@@ -78,32 +55,61 @@ const hideForm = () => {
   root.style.display = "none";
 };
 
-const newSurveyDirectory = async () => {
+const getRootDirectory = (path) => {
+  let index = path.indexOf("/");
+  let root = path;
+  if(index > -1){
+    root = path.slice(0, index);
+  }
+  return root;
+}
+const getPathUnderRootDirectory = (path) => {
+  let index = path.indexOf("/");
+  let root = path;
+  if(index > -1){
+    root = path.slice(index+1, path.length);
+  }
+  return root;
+}
+const clearMemory = async () => {
   let opfsRoot = await navigator.storage.getDirectory();
-  let name = Date.now().toString();
+  await fm.RemoveDirectory(opfsRoot);
+}
+const newSurveyDirectory = async (name = "") => {
+  let opfsRoot = await navigator.storage.getDirectory();
+  if(name == "" ){
+  name = Date.now().toString();
+  }
   let handle = await fm.GetDirectory(name, opfsRoot, true);
   return handle;
 };
-
+const openNewSurvey = async () => {
+  const directoryHandle = await newSurveyDirectory();
+  await DirectoryManager.newDirectory(directoryHandle);
+  showForm();
+}
 const newSurveyFromFile = async (event) => {
   let element = event.target;
+  await clearMemory();
   if (element?.id === "directory-input") {
     console.log(element);
     let files = element.files;
-    const directoryHandle = await newSurveyDirectory();
+    let rootDirName = getRootDirectory(files[0].webkitRelativePath);
+    const directoryHandle = await newSurveyDirectory(rootDirName );
     await DirectoryManager.newDirectory(directoryHandle);
     console.log(directoryHandle);
     for (let file of files) {
       console.log("writing");
       console.log(file);
       try {
-        await DirectoryManager.saveFile(file.webkitRelativePath, file);
+        let destPath = getPathUnderRootDirectory(file.webkitRelativePath);
+        await DirectoryManager.saveFile(destPath, file);
       } catch (err) {
         console.log("Error:", err);
         console.log("the document couldn't be read!");
       }
     }
-    setTimeout(openSurvey(), 50);
+    setTimeout(openSurvey, 50);
   } else {
     let inp = document.getElementById("directory-input");
     inp.click();
@@ -111,27 +117,24 @@ const newSurveyFromFile = async (event) => {
 };
 
 const saveSurvey = async () => {
-  setState();
-  let content = JSON.stringify(inputState);
+  setData();
+  let content = JSON.stringify(survayData);
   await DirectoryManager.saveFile("survey.json", content);
-  await fm.DownloadFilesAsZip(DirectoryManager.handler, "TKYGM");
+  await fm.DownloadFilesAsZip(DirectoryManager.handler);
 };
 
 const openSurvey = async () => {
   let res = false;
   try {
     let directoryHandle = DirectoryManager.handler;
-    let file = await fm.GetFile(directoryHandle, "TKYGM/survey.json");
+    let file = await fm.GetFile(directoryHandle, "survey.json");
     if (file) {
       console.log(file);
       let content = await file.text();
       console.log(content);
 
-      inputState = JSON.parse(content) ?? {};
-      console.log("open new survey 1");
-
-      importState(inputState);
-      console.log("open new survey");
+      survayData = JSON.parse(content) ?? {};
+      importData(survayData);
       showForm();
       return true;
     }
@@ -143,9 +146,7 @@ const openSurvey = async () => {
   return res;
 };
 
-const openNewSurvey = () => {
-  showForm();
-}
+
 const DirectoryManager = {
   directory: "",
   handler: null,

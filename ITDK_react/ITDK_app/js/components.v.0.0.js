@@ -1,6 +1,6 @@
 function AuditResult(props) {
   return (
-    <select id={props.id}>
+    <select id={props.id} className="selection-state">
       <option value="0">EK SUNULDU</option>
       <option value="1">EK SUNULMADI</option>
       <option value="2">UYGULAMA GÖRÜLMEDİ</option>
@@ -15,7 +15,7 @@ function AuditResult(props) {
 
 function SurveyType(props) {
   return (
-    <select id={props.id}>
+    <select id={props.id} className="selection-state">
       <option value="0">İşletme İzni Belgesi Denetimi</option>
       <option value="1">Kısmi İşletme İzni Belgesi Denetimi</option>
       <option value="2">Ara Denetim</option>
@@ -25,7 +25,7 @@ function SurveyType(props) {
 
 function FacilityType(props) {
   return (
-    <select id={props.id}>
+    <select id={props.id} className="selection-state">
       <option value="0">Tersane</option>
       <option value="1">Tekne İmal Yeri</option>
       <option value="2">Çekek Yeri</option>
@@ -35,7 +35,7 @@ function FacilityType(props) {
 
 function FloatingDeckStatus(props) {
   return (
-    <select id={props.id}>
+    <select id={props.id} className="selection-state">
       <option value="0">Yüzer Havuz Mevcut</option>
       <option value="1">Yüzer Havuz Mevcut Değil</option>
     </select>

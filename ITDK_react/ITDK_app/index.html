@@ -18,6 +18,8 @@
   <script type="module" src="lib/jszip.js"></script>
   <script src="lib/FileSaver.js"></script>
   <script type="module" src="js/FileManager.js"></script>
+  <script type="application/javascript" src="js/core.v.0.0.js"></script>
+
   <!-- Don't use this in production: -->
 </head>
 
@@ -27,12 +29,23 @@
   </div>
   <div id="root"></div>
 
-  <input id="img-inp-1" class="hidden-input" type="file" accept="image/*" capture="camera" />
-  <input id="directory-input" class="hidden-input" type="file" webkitdirectory directory>
-  <button id="btn-new-survey-from-file">New Survey from Folder to Privite</button>
-  <button id="btn-save-survey">Save Survey</button>
-  <button id="btn-open-survey">Open Survey</button>
+  <div class="hidden-controls">
+    <input id="img-inp-1" type="file" accept="image/*" capture="camera" />
+    <input id="directory-input" type="file" webkitdirectory directory>
+  </div>
 
+  <div id="controls-widget" draggable="true">
+    <div class="widget-cover">
+      <div class="cover-line"></div>
+      <div class="cover-line"></div>
+      <div class="cover-line"></div>
+    </div>
+    <div class="widget-body">
+      <button id="btn-new-survey-from-file">New Survey from Folder to Privite</button>
+      <button id="btn-save-survey">Save Survey</button>
+      <button id="btn-open-survey">Open Survey</button>
+    </div>
+  </div>
   <script>
 
     async function processDirectory() {
@@ -71,7 +84,7 @@
   <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-  <script type="module" src="js/core.v.0.0.js"></script>
+  <script type="module" src="js/app.v.0.0.js"></script>
   <script type="text/babel" src="js/components.v.0.0.js"></script>
   <script type="text/babel" src="js/SurveyForm.v.0.0.jsx"></script>
 

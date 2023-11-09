@@ -13,7 +13,7 @@ function SurveyForm() {
             <section className="survey-header">
                 <div>
                     <label>TESIS ADI:
-                        <input id="facility-name" type="text" placeholder="Tesis Adını Girin"/>
+                        <input id="facility-name" className="text-state" type="text" placeholder="Tesis Adını Girin"/>
                     </label>
                 </div>
                 <div>
@@ -34,7 +34,7 @@ function SurveyForm() {
                                     Tesis adresi
                                 </td>
                                 <td>
-                                    <input id="facility-address" type="text" />
+                                    <input id="facility-address" className="text-state" type="text" />
                                 </td>
                             </tr>
                             <tr>
@@ -42,7 +42,7 @@ function SurveyForm() {
                                     Denetim sırasında Komisyona eşlik eden tesis işleticisi/yetkilendirilmiş kişi bilgisi
                                 </td>
                                 <td>
-                                    <input id="representative-person-name" type="text" />
+                                    <input id="representative-person-name" className="text-state" type="text" />
                                 </td>
                             </tr>
                             <tr>
@@ -50,7 +50,7 @@ function SurveyForm() {
                                     İTDK ücreti ile ilgili makbuz Ek 50 olarak kaydedilir.
                                 </td>
                                 <td>
-                                    <select id="payment">
+                                    <select id="payment" className="selection-state">
                                         <option value="payed">Yatırıldı</option>
                                         <option value="not-payed">Yatırılmadı</option>
                                     </select>

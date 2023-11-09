@@ -59,8 +59,7 @@ const GetFiles = async (dirHandle, iterative = false, path = "") => {
 
 const DownloadFilesAsZip = async (dirHandle, name) => {
     let zip = new JSZip();
-    let rootFolder = zip.folder(name);
-    await FillZip(dirHandle, rootFolder);
+    await FillZip(dirHandle, zip);
     let blob = await zip.generateAsync({type:'blob'});
     saveAs(blob, name);
 }
