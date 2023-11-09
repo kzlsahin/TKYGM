@@ -42,12 +42,22 @@ function FloatingDeckStatus(props) {
   );
 }
 
+
+const clc = (qID) => {
+    console.log(qID);
+    getImage(qID);
+}
+
 function QuestionBody(props) {
     const listItems = props.items.map(
         item =>
             <QeestionItem key={item.id} id={item.id} head={item.head} />
     );
     return (
+        <article id={"q-" + props.id } >
+            <div onClick={() => clc(props.id)} className="article-banner">
+                <p>{props.id}</p>
+            </div>
         <table className="article-body">
             <tbody>
                 <tr className="questionary-item head-question">
@@ -55,7 +65,8 @@ function QuestionBody(props) {
                 </tr>
                 {listItems }
             </tbody>
-        </table >
+            </table >
+        </article>
     );
 }
 
