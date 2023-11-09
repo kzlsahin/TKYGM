@@ -65,44 +65,28 @@ function SurveyForm() {
                     <div onClick={() => clc("1")} className="article-banner">
                         <p>1</p>
                     </div>
-                    <table className="article-body">
-                        <tbody>
-                        <tr className="questionary-item head-question">
-                            <td colSpan="2">Sanayi veritabanı programına kayıtlı mı? Bilgileri güncel mi? (Yönetmelik Md 18 (8) )</td>
-                        </tr>
-                        <tr className="questionary-item">
-                            <td className="question">Ek 1 </td>
-                            <td><AuditResult id="q-1-1"/></td>
-                        </tr>
-                        <tr className="questionary-item">
-                            <td className="question">Firma adı ve adresi Ticaret Sicil Gazetesi ile uyumlu mu?</td>
-                            <td><AuditResult id="q-1-2"/></td>
-                        </tr>
-                        <tr className="questionary-item">
-                            <td className="question">Çalışan sayısı güncel mi? </td>
-                            <td><AuditResult id="q-1-3"/></td>
-                        </tr>
-                        </tbody>
-                    </table >
+                    <QuestionBody
+                        head="Sanayi veritabanı programına kayıtlı mı? Bilgileri güncel mi? (Yönetmelik Md 18 (8) )"
+                        items={
+                            [
+                                { id: "q-1-1", head: "Ek 1" },
+                                { id: "q-1-2", head: "Firma adı ve adresi Ticaret Sicil Gazetesi ile uyumlu mu?" },
+                                { id: "q-1-3", head: "Çalışan sayısı güncel mi?" },
+                            ]} />
                 </article>
 
                 <article id="q-2">
                     <div onClick={() => clc("2")} className="article-banner">
                         <p>2</p>
                     </div>
-                    <table className="article-body">
-                    <tbody>
-                        <tr className="questionary-item head-question">
-                            <td colSpan="2">
-                                Tüzel kişiliğe ait faaliyet konusuna uygun Ticaret Sicil Gazetesinin aslı veya idarece onaylı örneği, gerçek kişiye ait sicil belgesinin aslı veya idarece onaylı örneği ve T.C. kimlik numarası beyanı sunuldu mu? (Yönetmelik Md -11 1 (b) )
-                            </td>
-                        </tr>
-                        <tr className="questionary-item">
-                            <td className="question">Ek 2</td>
-                            <td><AuditResult id="q-2-1"/></td>
-                        </tr>
-                        </tbody>
-                    </table >
+                    <QuestionBody
+                        head="Tüzel kişiliğe ait faaliyet konusuna uygun Ticaret Sicil Gazetesinin aslı veya idarece onaylı örneği, gerçek kişiye ait sicil belgesinin aslı veya idarece onaylı örneği ve T.C. kimlik numarası beyanı sunuldu mu? (Yönetmelik Md -11 1 (b) )"
+                        items={
+                            [
+                                { id: "q-2-1", head: "Ek 2" },
+                                { id: "q-2-2", head: "Firma adı ve adresi Ticaret Sicil Gazetesi ile uyumlu mu?" },
+                                { id: "q-2-3", head: "Çalışan sayısı güncel mi?" },
+                            ]} />
                 </article>
 
             </section>

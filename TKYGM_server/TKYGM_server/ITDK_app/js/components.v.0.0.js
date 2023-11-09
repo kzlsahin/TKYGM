@@ -41,3 +41,29 @@ function FloatingDeckStatus(props) {
     </select>
   );
 }
+
+function QuestionBody(props) {
+    const listItems = props.items.map(
+        item =>
+            <QeestionItem key={item.id} id={item.id} head={item.head} />
+    );
+    return (
+        <table className="article-body">
+            <tbody>
+                <tr className="questionary-item head-question">
+                    <td colSpan="2">{props.head}</td>
+                </tr>
+                {listItems }
+            </tbody>
+        </table >
+    );
+}
+
+function QeestionItem(props) {
+    return (
+        <tr className="questionary-item">
+            <td className="question">{props.head} </td>
+            <td><AuditResult id={props.id} /></td>
+        </tr>
+    );
+}
