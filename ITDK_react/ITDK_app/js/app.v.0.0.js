@@ -1,4 +1,5 @@
 import * as fm from "/js/FileManager.js";
+export {GetImage};
 
 const SurveyTypeEnum = Object.freeze({
   Business_Permit: 0,
@@ -51,7 +52,7 @@ const importState = (state) => {
   }
 };
 
-const getImage = (qID) => {
+const GetImage = (qID) => {
   console.log("get image");
   let inp = document.getElementById("img-inp-1");
   console.log(inp);
@@ -193,6 +194,7 @@ const FileSavingManager = {};
 
 const onStartup = () => {
   hideForm();
+  window.getImage = GetImage;
 };
 
 window.addEventListener("load", onStartup);
