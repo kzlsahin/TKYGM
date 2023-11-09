@@ -24,84 +24,96 @@
 </head>
 
 <body>
-  <div class="div-banner">
-    TKYGM
-  </div>
-  <div id="root"></div>
-
-  <div class="hidden-controls">
-    <input id="img-inp-1" type="file" accept="image/*" capture="camera" />
-    <input id="directory-input" type="file" webkitdirectory directory>
-  </div>
-
-  <div id="controls-widget" draggable="true">
-    <div class="widget-cover">
-      <div class="cover-line"></div>
-      <div class="cover-line"></div>
-      <div class="cover-line"></div>
+    <div class="app-banner">
+        <div id="controls-widget" draggable="true">
+            <div class="widget-cover vertical-center">
+                <div class="cover-line"></div>
+                <div class="cover-line"></div>
+                <div class="cover-line"></div>
+            </div>
+            <div class="widget-body">
+                <button id="btn-new-survey-from-file" class="widget-body-item">Load Survey</button>
+                <button id="btn-save-survey" class="widget-body-item">Save Survey</button>
+                <button id="btn-open-survey" class="widget-body-item">New Survey</button>
+            </div>
+        </div>
+        <div class="banner-title">
+            Tersaneler ve Kıyı Yapıları Genel Müdürlüğü
+        </div>
     </div>
-    <div class="widget-body">
-      <button id="btn-new-survey-from-file">New Survey from Folder to Privite</button>
-      <button id="btn-save-survey">Save Survey</button>
-      <button id="btn-open-survey">Open Survey</button>
+    <div id="root"></div>
+
+    <div class="hidden-controls">
+        <input id="img-inp-1" type="file" accept="image/*" capture="camera" />
+        <input id="directory-input" type="file" webkitdirectory directory>
     </div>
-  </div>
-  <script>
 
-    async function processDirectory() {
-      try {
-        const directoryInput = document.getElementById("directoryInput");
-        const [directoryHandle] = directoryInput.files;
 
-        const allFiles = await getAllFiles(directoryHandle);
-        console.log(allFiles);
-      } catch (error) {
-        console.error("Error:", error);
-      }
-    }
+    <script>
 
-    async function getAllFiles(directoryHandle) {
-      const allFiles = [];
+        async function processDirectory() {
+            try {
+                const directoryInput = document.getElementById("directoryInput");
+                const [directoryHandle] = directoryInput.files;
 
-      async function processDirectoryRecursively(directoryHandle) {
-        const entries = await directoryHandle.getEntries();
-        for await (const entry of entries) {
-          if (entry.isFile) {
-            allFiles.push(entry);
-          } else if (entry.isDirectory) {
-            await processDirectoryRecursively(entry);
+                const allFiles = await getAllFiles(directoryHandle);
+                console.log(allFiles);
+            } catch (error) {
+                console.error("Error:", error);
+            }
+        }
+
+        async function getAllFiles(directoryHandle) {
+            const allFiles = [];
+
+            async function processDirectoryRecursively(directoryHandle) {
+                const entries = await directoryHandle.getEntries();
+                for await (const entry of entries) {
+                    if (entry.isFile) {
+                        allFiles.push(entry);
+                    } else if (entry.isDirectory) {
+                        await processDirectoryRecursively(entry);
+                    }
+                }
+            }
+
+            await processDirectoryRecursively(directoryHandle);
+            return allFiles;
+        }
+    </script>
+    <div id="root">
+    </div>
+
+    <dialog>
+        <p>Kaydetmeden çıkarsanız mevcut çalışmanızı kaybedebilirsiniz. Çıkmadan önce kaydetmek ister misiniz?</p>
+        <form method="dialog">
+            <button name="yes" value="yes">Evet</button>
+            <button name="no" value="no">Hayır</button>
+            <button name="cancel"  value="cancel" autofocus>Cancel</button>
+        </form>
+    </dialog>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="module" src="js/app.v.0.0.js"></script>
+    <script type="text/babel" src="js/components.v.0.0.js"></script>
+    <script type="text/babel" src="js/SurveyForm.v.0.0.jsx"></script>
+
+
+    <!-- <script>
+          if ('serviceWorker' in navigator) {
+              // Register a service worker hosted at the root of the
+              // site using the default scope.
+              navigator.serviceWorker.register('sw.v.0.0.js').then(function (registration) {
+                  console.log('Service worker registration succeeded:', registration);
+              }, /*catch*/ function (error) {
+                  console.log('Service worker registration failed:', error);
+              });
+          } else {
+              console.log('Service workers are not supported.');
           }
-        }
-      }
-
-      await processDirectoryRecursively(directoryHandle);
-      return allFiles;
-    }
-  </script>
-  <div id="root">
-  </div>
-
-  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-  <script type="module" src="js/app.v.0.0.js"></script>
-  <script type="text/babel" src="js/components.v.0.0.js"></script>
-  <script type="text/babel" src="js/SurveyForm.v.0.0.jsx"></script>
-
-
-  <!-- <script>
-        if ('serviceWorker' in navigator) {
-            // Register a service worker hosted at the root of the
-            // site using the default scope.
-            navigator.serviceWorker.register('sw.v.0.0.js').then(function (registration) {
-                console.log('Service worker registration succeeded:', registration);
-            }, /*catch*/ function (error) {
-                console.log('Service worker registration failed:', error);
-            });
-        } else {
-            console.log('Service workers are not supported.');
-        }
-    </script> -->
+      </script> -->
 </body>
 
 </html>
