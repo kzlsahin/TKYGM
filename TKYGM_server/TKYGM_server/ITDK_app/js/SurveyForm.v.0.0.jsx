@@ -133,26 +133,51 @@ function SurveyForm() {
 
             </section>
             <table>
-                <th>
+                <tbody>
+                    <tr>
+                        <td>Diğer Hususlar</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">*Tersane, Tekne İmal ve Çekek Yeri Yönetmeliği'nin 19'uncu maddesinin 6'ıncı fıkrası / 12'nci maddenin 1'inci fıkrası kapsamında</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">Açıklama kısımlarında kullanılan "Ek sunulmadı" ifadesi ilgili dokümanın Komisyon tarafından talep edildiği ancak tesis yetkilisince temin edilmediği; "Ek konmadı/konulmadı" ifadesi ise Komisyonun herhangi bir dokümanın ek olarak kullanılmasına gerek duymadığı anlamına gelir. </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">Denetim, bu dokümanda yer alan tarihte mesai saatleri içerisinde tesiste yapılan genel gözlemler, rastgele örnekleme ile edinilen bilgiler ve firma yetkilisince yapılan beyanlar doğrultusunda hazırlanmıştır.</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">İş bu rapor tesis incelemesi esnasında tarafımızca imza altına alınmıştır.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table>
+            <thead>
+                <tr>
                     <td></td>
                     <td>Adı Soyadı</td>
                     <td>Görevlendirildiği Birim / Unvan / İmza</td>
-                </th>
-                <th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr>
                     <td>Üye</td>
                     <td></td>
                     <td></td>
-                </th>
-                <th>
+                </tr>
+                <tr>
                     <td>Üye</td>
                     <td></td>
                     <td></td>
-                </th>
-                <th>
+                </tr>
+                <tr>
                     <td>Üye</td>
                     <td></td>
                     <td></td>
-                </th>
+                    </tr>
+                </tbody>
             </table>
         </div>
     );
