@@ -300,17 +300,17 @@ const showDialog = (doBefore, doJob, cancel) => {
 
 }
 
-//const OnClick = (event) => {
-//    let controlWidgetId = "#controls-widget"
-//    let controlWidget = document.querySelector(controlWidgetId)
-//    if (event.target.closest(controlWidgetId)) {
-//        controlWidget.setAttribute('open', true);
-//        console.log("open");
-//    }
-//    else {
-//        controlWidget.setAttribute('open', false);
-//    }
-//}
+const OnClick = (event) => {
+    let controlWidgetId = "#controls-widget"
+    let controlWidget = document.querySelector(controlWidgetId)
+    if (event.target.closest(controlWidgetId)) {
+        controlWidget.setAttribute('open', true);
+        console.log("open");
+    }
+    else {
+        controlWidget.setAttribute('open', false);
+    }
+}
 
 window.addEventListener("load", onStartup);
 window.addEventListener("beforeprint", onBeforePrint);
