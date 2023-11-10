@@ -1,5 +1,5 @@
 export { SaveFile, GetFile, GetFiles, LogDirectory, DownloadFilesAsZip, GetDirectory, RemoveDirectory};
-import * as jszip from "/lib/jszip.js";
+import * as jszip from "../lib/jszip.js";
 
 const SaveFile = async (directoryHandler, fileName, file) => {
     if(fileName.includes("/")){

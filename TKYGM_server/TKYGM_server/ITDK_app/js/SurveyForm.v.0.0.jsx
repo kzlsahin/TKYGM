@@ -6,17 +6,22 @@ function SurveyForm() {
                 İnceleme, Tespit ve Denetim Komisyonu Denetim Raporu*
             </h1>
             <section className="survey-header">
-                <div>
-                    <label>TESIS ADI:
-                        <input id="facility-name" className="text-state" type="text" placeholder="Tesis Adını Girin" />
-                    </label>
-                </div>
-                <div>
-                    <SurveyType id="survet-type" />
-                    <FacilityType id="facility-type" />
-                    <FloatingDeckStatus id="floating-dock-status" />
-                    <input type="date" id="document-date" />
-                </div>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td className="bold">TESIS ADI:</td>
+                            <td colSpan="3">
+                                <input id="facility-name" className="text-state" type="text" placeholder="Tesis Adını Girin" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><SurveyType id="survet-type" /></td>
+                            <td><FacilityType id="facility-type" /></td>
+                            <td><FloatingDeckStatus id="floating-dock-status" /></td>
+                            <td><input type="date" id="document-date" /></td>
+                        </tr>
+                    </tbody>
+                </table>
             </section>
             <section className="survey-prerequisites">
                 <article>
@@ -132,50 +137,50 @@ function SurveyForm() {
                         ]} />
 
             </section>
-            <table>
+            <table className="full-width">
                 <tbody>
-                    <tr>
-                        <td>Diğer Hususlar</td>
-                        <td></td>
-                        <td></td>
+                    <tr className="discussion-row">
+                        <th>
+                            <span className="vertical-text">Diğer Hususlar</span>
+                        </th>
+                        <td colSpan="2"></td>
                     </tr>
                     <tr>
-                        <td colspan="3">*Tersane, Tekne İmal ve Çekek Yeri Yönetmeliği'nin 19'uncu maddesinin 6'ıncı fıkrası / 12'nci maddenin 1'inci fıkrası kapsamında</td>
+                        <td colSpan="3">*Tersane, Tekne İmal ve Çekek Yeri Yönetmeliği'nin 19'uncu maddesinin 6'ıncı fıkrası / 12'nci maddenin 1'inci fıkrası kapsamında</td>
                     </tr>
                     <tr>
-                        <td colspan="3">Açıklama kısımlarında kullanılan "Ek sunulmadı" ifadesi ilgili dokümanın Komisyon tarafından talep edildiği ancak tesis yetkilisince temin edilmediği; "Ek konmadı/konulmadı" ifadesi ise Komisyonun herhangi bir dokümanın ek olarak kullanılmasına gerek duymadığı anlamına gelir. </td>
+                        <td colSpan="3">Açıklama kısımlarında kullanılan "Ek sunulmadı" ifadesi ilgili dokümanın Komisyon tarafından talep edildiği ancak tesis yetkilisince temin edilmediği; "Ek konmadı/konulmadı" ifadesi ise Komisyonun herhangi bir dokümanın ek olarak kullanılmasına gerek duymadığı anlamına gelir. </td>
                     </tr>
                     <tr>
-                        <td colspan="3">Denetim, bu dokümanda yer alan tarihte mesai saatleri içerisinde tesiste yapılan genel gözlemler, rastgele örnekleme ile edinilen bilgiler ve firma yetkilisince yapılan beyanlar doğrultusunda hazırlanmıştır.</td>
+                        <td colSpan="3">Denetim, bu dokümanda yer alan tarihte mesai saatleri içerisinde tesiste yapılan genel gözlemler, rastgele örnekleme ile edinilen bilgiler ve firma yetkilisince yapılan beyanlar doğrultusunda hazırlanmıştır.</td>
                     </tr>
                     <tr>
-                        <td colspan="3">İş bu rapor tesis incelemesi esnasında tarafımızca imza altına alınmıştır.</td>
+                        <td colSpan="3">İş bu rapor tesis incelemesi esnasında tarafımızca imza altına alınmıştır.</td>
                     </tr>
                 </tbody>
             </table>
             <table>
-            <thead>
-                <tr>
-                    <td></td>
-                    <td>Adı Soyadı</td>
-                    <td>Görevlendirildiği Birim / Unvan / İmza</td>
-                    </tr>
-                </thead>
                 <tbody>
-                <tr>
-                    <td>Üye</td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Üye</td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Üye</td>
-                    <td></td>
-                    <td></td>
+                    <tr>
+                        <th></th>
+                        <td>Adı Soyadı</td>
+                        <td>Görevlendirildiği Birim / Unvan / İmza</td>
+                    </tr>
+
+                    <tr>
+                        <th>Üye</th>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Üye</th>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Üye</th>
+                        <td></td>
+                        <td></td>
                     </tr>
                 </tbody>
             </table>

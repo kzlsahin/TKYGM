@@ -1,4 +1,4 @@
-import * as fm from "/js/FileManager.js";
+import * as fm from "./FileManager.v.0.1.js";
 
 let root;
 let surveyData = {};
@@ -126,11 +126,8 @@ const _openNewSurvey = async () => {
     showForm();
 }
 
-const _loadSurveyFromFile = async (event) => {
-    let element = event.target;
-    await clearMemory();
-    if (element?.id === "directory-input") {
-        console.log(element);
+const _loadSurveyFromFile = async () => {    
+        await clearMemory();
         let files = element.files;
         let rootDirName = getRootDirectory(files[0].webkitRelativePath);
         const directoryHandle = await newSurveyDirectory(rootDirName);
@@ -148,11 +145,7 @@ const _loadSurveyFromFile = async (event) => {
             }
         }
         AppState.ongoingSurvey = true;
-        setTimeout(loadSurvey, 50);
-    } else {
-        let inp = document.getElementById("directory-input");
-        inp.click();
-    }
+        setTimeout(loadSurvey, 50);    
 };
 
 const SaveSurvey = async () => {
@@ -228,12 +221,18 @@ const OpenNewSurvey = () => {
         _openNewSurvey();
     }
 }
-const LoadSurveyFromFile = () => {
-    if (AppState.modified && AppState.ongoingSurvey) {
-        showDialog(SaveSurvey, _loadSurveyFromFile, () => { });
-    }
-    else {
-        _loadSurveyFromFile();
+const LoadSurveyFromFile = (event) => {
+    let element = event.target;
+    if (element?.id === "directory-input") {
+        if (AppState.modified && AppState.ongoingSurvey) {
+            showDialog(SaveSurvey, _loadSurveyFromFile, () => { });
+        }
+        else {
+            _loadSurveyFromFile(event);
+        }
+    } else {
+        let inp = document.getElementById("directory-input");
+        inp.click();
     }
 }
 
