@@ -1,0 +1,76 @@
+﻿#controls-widget {
+    background-color: white;
+    display: inline-block;
+    position: absolute;
+    padding: 0;
+    width: 5ch;
+    height: 5ch;
+    overflow: hidden;
+}
+
+    #controls-widget:hover {
+        overflow: visible;
+        width: fit-content;
+        height: fit-content;
+    }
+
+.widget-body {
+    padding: 1ch;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: start;
+    align-items: stretch;
+    border: 1px solid black;
+    border-radius: 0.5em;
+    transition: all ease-in 1s;
+    width: fit-content;
+    height: fit-content;
+}
+
+.widget-body-item {
+    padding: 0.5em;
+    margin: 1em;
+    margin-top: 0.5ch;
+    margin-bottom: 0.5ch;
+    border: solid 1px gray;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+    .widget-body-item:hover {
+        transition: all ease-in 0.5s;
+        box-shadow: 2px 2px 3px 3px lightgray;
+    }
+
+#controls-widget:hover .widget-cover {
+    display: none;
+}
+
+#controls-widget:hover .widget-body {
+    display: flex;
+}
+
+#controls-widget .widget-cover {
+    display: block;
+}
+
+#controls-widget .widget-body {
+    display: none;
+}
+
+.cover-line {
+    display: block;
+    background-color: black;
+    margin-top: 0.8ch;
+    margin-bottom: 0.8ch;
+    width: 80%;
+    height: 0.2ch;
+}
+
+.widget-cover {
+    position: relative;
+    padding: 0.5ch;
+    display: block;
+    width: 100%;
+    height: fit-content;
+}
