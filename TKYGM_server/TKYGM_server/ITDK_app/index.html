@@ -11,6 +11,7 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
 
     <link rel="icon" HREF="./images/UAB_Logo.png">
     <link rel="manifest" href="./manifest.webmanifest">
@@ -18,7 +19,7 @@
     <link href="./css/ControlWidgetStyle.css" rel="stylesheet" type="text/css">
     <link href="./css/SurveyFormStyle.css" rel="stylesheet" type="text/css">
     <script type="module" src="./lib/jszip.js"></script>
-    <script src="lib/FileSaver.js"></script>
+    <script src="./lib/FileSaver.js"></script>
     <script type="module" src="./js/FileManager.v.0.1.js"></script>
     <script type="application/javascript" src="./js/core.v.0.0.js"></script>
 
@@ -27,16 +28,16 @@
 
 <body>
     <div class="app-banner">
-        <div id="controls-widget" draggable="true">
+        <div id="controls-widget" draggable="true" open="true">
             <div class="widget-cover vertical-center">
                 <div class="cover-line"></div>
                 <div class="cover-line"></div>
                 <div class="cover-line"></div>
             </div>
             <div class="widget-body">
-                <button id="btn-new-survey-from-file" class="widget-body-item">Load Survey</button>
-                <button id="btn-save-survey" class="widget-body-item">Save Survey</button>
-                <button id="btn-open-survey" class="widget-body-item">New Survey</button>
+                <button id="btn-new-survey-from-file" class="widget-body-item">Dosyadan Aç</button>
+                <button id="btn-save-survey" class="widget-body-item">Kaydet</button>
+                <button id="btn-open-survey" class="widget-body-item">Yeni Form</button>
                 <button id="btn-print-survey" class="widget-body-item">Yazdır</button>
             </div>
         </div>
@@ -104,11 +105,11 @@
     <script type="text/babel" src="./js/SurveyForm.v.0.0.jsx"></script>
 
 
-     <script>
+     <!--<script>
           if ('serviceWorker' in navigator) {
               // Register a service worker hosted at the root of the
               // site using the default scope.
-              navigator.serviceWorker.register('sw.v.0.1.js').then(function (registration) {
+              navigator.serviceWorker.register('sw.v.0.2.js').then(function (registration) {
                   console.log('Service worker registration succeeded:', registration);
               }, /*catch*/ function (error) {
                   console.log('Service worker registration failed:', error);
@@ -116,7 +117,7 @@
           } else {
               console.log('Service workers are not supported.');
           }
-      </script> 
+      </script>--> 
 </body>
 
 </html>

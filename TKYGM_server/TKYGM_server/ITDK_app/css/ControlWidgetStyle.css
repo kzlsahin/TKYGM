@@ -8,14 +8,14 @@
     overflow: hidden;
 }
 
-    #controls-widget:hover {
+    #controls-widget[open=true] {
         overflow: visible;
         width: fit-content;
         height: fit-content;
     }
 
 .widget-body {
-    padding: 1ch;
+    padding: 0.5ch;
     display: flex;
     flex-flow: column nowrap;
     justify-content: start;
@@ -28,13 +28,15 @@
 }
 
 .widget-body-item {
-    padding: 0.5em;
+    font-size: 20pt;
+    padding: 1em;
     margin: 1em;
     margin-top: 0.5ch;
     margin-bottom: 0.5ch;
     border: solid 1px gray;
-    border-radius: 4px;
+    border-radius: 0.5em;
     cursor: pointer;
+    min-width: 20ch;
 }
 
     .widget-body-item:hover {
@@ -42,19 +44,24 @@
         box-shadow: 2px 2px 3px 3px lightgray;
     }
 
-#controls-widget:hover .widget-cover {
+#controls-widget[open=true].widget-cover {
     display: none;
 }
 
-#controls-widget:hover .widget-body {
+#controls-widget[open=true] .widget-body {
     display: flex;
 }
 
-#controls-widget .widget-cover {
+#controls-widget[open=false] .widget-cover {
     display: block;
+    position: relative;
+    padding: 0.5ch;
+    display: block;
+    width: 100%;
+    height: fit-content;
 }
 
-#controls-widget .widget-body {
+#controls-widget[open=false] .widget-body {
     display: none;
 }
 
@@ -67,10 +74,3 @@
     height: 0.2ch;
 }
 
-.widget-cover {
-    position: relative;
-    padding: 0.5ch;
-    display: block;
-    width: 100%;
-    height: fit-content;
-}

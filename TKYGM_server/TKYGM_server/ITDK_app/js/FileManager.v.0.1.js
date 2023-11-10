@@ -2,7 +2,7 @@ export { SaveFile, GetFile, GetFiles, LogDirectory, DownloadFilesAsZip, GetDirec
 import * as jszip from "../lib/jszip.js";
 
 const SaveFile = async (directoryHandler, fileName, file) => {
-    if(fileName.includes("/")){
+    if(fileName?.includes("/")){
         let i = fileName.indexOf("/");
         let dirName = fileName.slice(0,i);
         let subFileName = fileName.slice(i+1, fileName.length);
@@ -58,22 +58,28 @@ const GetFiles = async (dirHandle, iterative = false, path = "") => {
 }
 
 const DownloadFilesAsZip = async (dirHandle, name) => {
+    console.log("creating zip file...");
     let zip = new JSZip();
     await FillZip(dirHandle, zip);
-    let blob = await zip.generateAsync({type:'blob'});
+    console.log("creating blob...");
+    let blob = await zip.generateAsync({ type: 'blob' });
+    console.log("saving blob...");
     saveAs(blob, name);
 }
 
 const FillZip = async (dirHandle, folder) => {
     for await (let [name, handle] of dirHandle.entries()) {
-        if(handle.kind === "directory"){
+        if (handle.kind === "directory") {
+            console.log(`directory: ${handle.name}`);
                 let subFolder = folder.folder(handle.name);
                 await FillZip(handle, subFolder);                  
         }
-        else{
+        else {
+            console.log(`getting file...`);
             let newFile = await handle.getFile();
-            console.log(newFile);
+            console.log(`file: ${newFile.name}`);
             folder.file(newFile.name, newFile);
+            console.log("file is added.");
         }
     }
 }

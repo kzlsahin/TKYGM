@@ -1,9 +1,9 @@
 import * as fm from "./FileManager.v.0.1.js";
-
+export { DirectoryManager }
 let root;
 let surveyData = {};
 const AppState = {
-    ongoingSurvey: false,
+    ongoingSurvey: true,
     modified: true,
     folderName: "",
 }
@@ -20,6 +20,7 @@ const setData = () => {
 };
 
 const importData = (state) => {
+    console.log("input fields are being set");
     let inputs = document.getElementsByClassName("text-state");
     for (let inp of inputs) {
         inp.value = state[inp.id] ?? "";
@@ -30,6 +31,7 @@ const importData = (state) => {
         console.log(selectable);
         selectable.value = state[selectable.id] ?? "0";
     }
+    console.log("input fields are set");
 };
 
 const GetImage = (qID) => {
@@ -63,6 +65,7 @@ const getRootDirectory = (path) => {
     if (index > -1) {
         root = path.slice(0, index);
     }
+    console.log(`directory is created as ${root}`);
     return root;
 }
 const getPathUnderRootDirectory = (path) => {
@@ -95,19 +98,23 @@ const newSurveyForm = () => {
         root = ReactDOM.createRoot(document.getElementById('root'));
         root.render(SurveyForm());
     }
+    console.log("new form is created");
 }
 
 const loadSurvey = async () => {
+    console.log("form data is being imported...");
     let res = false;
     try {
         let directoryHandle = DirectoryManager.handler;
         let file = await fm.GetFile(directoryHandle, "survey.json");
         if (file) {
+            console.log("survey.json file is found.");
             console.log(file);
             let content = await file.text();
-            console.log(content);
             surveyData = JSON.parse(content) ?? {};
-            return true;
+            console.log("data is deserialized");
+            console.log(surveyData);
+            res = true;
         }
     } catch (err) {
         console.log("Error:", err);
@@ -115,6 +122,7 @@ const loadSurvey = async () => {
     }
     newSurveyForm();
     importData(surveyData);
+    showForm();
     return res;
 };
 const _openNewSurvey = async () => {
@@ -126,12 +134,18 @@ const _openNewSurvey = async () => {
     showForm();
 }
 
-const _loadSurveyFromFile = async () => {    
-        await clearMemory();
-        let files = element.files;
+const _loadSurveyFromFile = async () => {
+    let element = document.getElementById("directory-input");
+    console.log("loading..");
+    await clearMemory();
+    console.log("memory is cleared.");
+    let files = element.files;
+    console.log(`${files?.length} files are found`);
+    if (files?.length > 0) {
         let rootDirName = getRootDirectory(files[0].webkitRelativePath);
         const directoryHandle = await newSurveyDirectory(rootDirName);
         await DirectoryManager.newDirectory(directoryHandle);
+        console.log("directory handle is set.");
         console.log(directoryHandle);
         for (let file of files) {
             console.log("writing");
@@ -145,16 +159,22 @@ const _loadSurveyFromFile = async () => {
             }
         }
         AppState.ongoingSurvey = true;
-        setTimeout(loadSurvey, 50);    
+        setTimeout(loadSurvey, 50);
+    }
+    else{
+        window.alert("no file is found!");
+    }
 };
 
 const SaveSurvey = async () => {
     try {
         setData();
         let content = JSON.stringify(surveyData);
+        console.log("servey data is content serialized.");
         await DirectoryManager.saveFile("survey.json", content);
-        await fm.DownloadFilesAsZip(DirectoryManager.handler);
-        AppState.modified = false;
+        console.log("servey data is saved.");
+        await fm.DownloadFilesAsZip(DirectoryManager.handler, DirectoryManager.name);
+        //AppState.modified = false;
     }
     catch (err) {
         console.log("Error:", err);
@@ -195,6 +215,8 @@ const DirectoryManager = {
             console.log("directory is null");
             return;
         }
+        console.log(fileName);
+        console.log(file);
         await fm.SaveFile(this.handler, fileName, file);
     },
     async getFile(fileName) {
@@ -222,13 +244,17 @@ const OpenNewSurvey = () => {
     }
 }
 const LoadSurveyFromFile = (event) => {
-    let element = event.target;
+    let element = event?.target;
+    console.log("LoadSurveyFromFile is called");
+    console.log(event ?? "no-event");
     if (element?.id === "directory-input") {
         if (AppState.modified && AppState.ongoingSurvey) {
+        //if (true) {
             showDialog(SaveSurvey, _loadSurveyFromFile, () => { });
         }
         else {
-            _loadSurveyFromFile(event);
+            console.log("going on without asking");
+            _loadSurveyFromFile();
         }
     } else {
         let inp = document.getElementById("directory-input");
@@ -274,9 +300,22 @@ const showDialog = (doBefore, doJob, cancel) => {
 
 }
 
+//const OnClick = (event) => {
+//    let controlWidgetId = "#controls-widget"
+//    let controlWidget = document.querySelector(controlWidgetId)
+//    if (event.target.closest(controlWidgetId)) {
+//        controlWidget.setAttribute('open', true);
+//        console.log("open");
+//    }
+//    else {
+//        controlWidget.setAttribute('open', false);
+//    }
+//}
+
 window.addEventListener("load", onStartup);
 window.addEventListener("beforeprint", onBeforePrint);
 window.addEventListener("afterprint", onAfterPrint);
+//window.addEventListener("click", OnClick);
 
 document
     .getElementById("btn-new-survey-from-file")
