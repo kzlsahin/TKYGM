@@ -1,4 +1,4 @@
-export { SaveFile, GetFile, GetFiles, LogDirectory, DownloadFilesAsZip, GetDirectory, RemoveDirectory};
+export { SaveFile, GetFile, GetFiles, LogDirectory, DownloadFilesAsZip, GetDirectory, RemoveDirectory, GetNameWithoutExtension, ReplaceExtension, GetExtension };
 import * as jszip from "../lib/jszip.js";
 
 const SaveFile = async (directoryHandler, fileName, file) => {
@@ -120,4 +120,29 @@ const GetDirectory = async (path, directoryHandler, isCreate = false) => {
 
 const RemoveDirectory = async (dirHandle) => {
     await dirHandle.remove({ recursive: true });
+}
+
+const GetNameWithoutExtension = (fileName) => {
+    let index = fileName.lastIndexOf('.');
+    let indexOfDirSeperator = fileName.lastIndexOf('/');
+    if (index > indexOfDirSeperator) {
+        let newFileName = fileName.slice(0, index);
+        return newFileName;
+    }
+    return fileName;
+}
+
+const GetExtension = (fileName) => {
+    let index = fileName.lastIndexOf('.');
+    let indexOfDirSeperator = fileName.lastIndexOf('/');
+    if (index > indexOfDirSeperator) {
+        let extension = fileName.slice(index+1, fileName.length);
+        return extension;
+    }
+    return "";
+}
+const ReplaceExtension = (fileName, extensionWithoutDot) => {
+    let newFileName = GetNameWithoutExtension(fileName);
+    newFileName = newFileName + '.' + extensionWithoutDot;
+    return newFileName;
 }

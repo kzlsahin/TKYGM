@@ -1,0 +1,15 @@
+{
+  "name": "my-project",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "babel src -d lib"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.23.0",
+    "@babel/core": "^7.23.3",
+    "@babel/plugin-transform-react-jsx-development": "^7.22.5",
+    "@babel/preset-react": "^7.23.3"
+  },
+  "plugins": [ "@babel/plugin-transform-react-jsx-development" ]
+
+}
