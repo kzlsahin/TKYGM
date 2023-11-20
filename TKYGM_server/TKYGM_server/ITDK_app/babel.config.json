@@ -1,0 +1,18 @@
+// first of all install babel:
+// npm install --save-dev @babel/core @babel/cli
+// if installed then to compile call babel:
+//"./node_modules/.bin/babel" JSX --out-dir ITDK_app/js
+{
+  "presets": [
+    [
+      "@babel/preset-react",
+      {
+        "pragma": "React.createElement", // default pragma is React.createElement (only in classic runtime)
+        "pragmaFrag": "React.Fragment", // default is React.Fragment (only in classic runtime)
+        "throwIfNamespace": true, // defaults to true
+        "runtime": "classic" // defaults to classic
+        // "importSource": "custom-jsx-library" // defaults to react (only in automatic runtime)
+      }
+    ]
+  ]
+}

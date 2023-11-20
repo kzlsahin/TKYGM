@@ -161,8 +161,8 @@ function SurveyForm() {
                             { id: "q-10-1", head: "Ek 10" },
                             { id: "q-10-2", head: "Belge geçerlilik tarihi denetim tarihinden sonra mı?" },
                             { id: "q-10-3", head: "Firma unvanı ve adres bilgisi Ticaret Sicil Gazetesi ile uyumlu mu?" },
-                            { id: "q-10-3", head: "Faaliyet alanı bilgisi fiili durumla uyumlu mu?" },
-                            { id: "q-10-3", head: "Arazi (m2), iskele, kızak, vinç, mühendis sayısı (dönemsel değişkenlik gösterebileceği dikkate alınır) fiili durumla uyumlu mu?" },
+                            { id: "q-10-4", head: "Faaliyet alanı bilgisi fiili durumla uyumlu mu?" },
+                            { id: "q-10-5", head: "Arazi (m2), iskele, kızak, vinç, mühendis sayısı (dönemsel değişkenlik gösterebileceği dikkate alınır) fiili durumla uyumlu mu?" },
                         ]} />
                 <QuestionBody
                     id="11"
@@ -187,11 +187,11 @@ function SurveyForm() {
                             { id: "q-13-1", head: "Ek 13" },
                             { id: "q-13-2", head: "İş akış şemasıyla uyumlu yapı/donatı ile techizat mevcut mu?" },
                             { id: "q-13-3", head: "Tesisin mevcut durumu ve işleyiş ile uyumlu organizasyon ve iş akış şeması mevcut mu?" },
-                            { id: "q-13-3", head: "Tesis organizasyonunda modern üretim ve yönetim meotdları dikkate alınmış mı?" },
-                            { id: "q-13-3", head: "Kapalı mahallerde havalandırma yeterli mi?" },
-                            { id: "q-13-3", head: "Tesisin genelinde aydınlatma yeterli mi?" },
-                            { id: "q-13-3", head: "İlgili şemalar (Organizasyon ve İş Akışı vb.) ile firma yetkilisinin üretim ve sahaların kullanımına yönelik izahlarının uyumlu olduğu gözlendi mi?" },
-                            { id: "q-13-3", head: "İlgili şemaların fiili durumla uyumlu olduğu gözlendi mi?" },
+                            { id: "q-13-5", head: "Tesis organizasyonunda modern üretim ve yönetim meotdları dikkate alınmış mı?" },
+                            { id: "q-13-6", head: "Kapalı mahallerde havalandırma yeterli mi?" },
+                            { id: "q-13-7", head: "Tesisin genelinde aydınlatma yeterli mi?" },
+                            { id: "q-13-8", head: "İlgili şemalar (Organizasyon ve İş Akışı vb.) ile firma yetkilisinin üretim ve sahaların kullanımına yönelik izahlarının uyumlu olduğu gözlendi mi?" },
+                            { id: "q-13-9", head: "İlgili şemaların fiili durumla uyumlu olduğu gözlendi mi?" },
                         ]} />
                 <QuestionBody
                     id="14"
@@ -218,8 +218,8 @@ yapıldığına dair sözleşme mevcut mu? (Yönetmelik Md 17 (7) a) b)"
                             { id: "q-16-1", head: "Ek 16" },
                             { id: "q-16-2", head: "Yüzer havuz ve sosyal tesisler ile yönetim binalarını kapsayan Plan mevcut mu?       " },
                             { id: "q-16-3", head: "Sahada/çalışma alanlarında uygun yerlerde plan mevcut mu?" },
-                            { id: "q-16-3", head: "Acil durumlarda çalışanların tahliyesi için kullanılacak yollar belirlenmiş mi?" },
-                            { id: "q-16-3", head: "Uygulama gözlendi mi?" },
+                            { id: "q-16-4", head: "Acil durumlarda çalışanların tahliyesi için kullanılacak yollar belirlenmiş mi?" },
+                            { id: "q-16-5", head: "Uygulama gözlendi mi?" },
                         ]} />
                 <QuestionBody
                     id="17"
@@ -273,7 +273,7 @@ yapıldığına dair sözleşme mevcut mu? (Yönetmelik Md 17 (7) a) b)"
                             { id: "q-22-1", head: "Ek 22" },
                             { id: "q-22-2", head: "Yönetim sisteminde ilgili prosedürler geliştirilmiş mi? Örnek formlar sunulmuş mu?" },
                             { id: "q-22-3", head: "Ziyaretçiler için prosedürler geliştirilmiş mi? (Tesis/Acil durum bilgilendirme, KKD temini vb.)" },
-                            { id: "q-22-3", head: "Uygulama gözlendi mi?" },
+                            { id: "q-22-4", head: "Uygulama gözlendi mi?" },
                         ]} />
                 <QuestionBody
                     id="23"
@@ -310,7 +310,7 @@ yapıldığına dair sözleşme mevcut mu? (Yönetmelik Md 17 (7) a) b)"
                             { id: "q-8-1", head: "Ek 26 " },
                             { id: "q-8-2", head: "Yönetim sisteminde ilgili prosedürler geliştirilmiş mi? Envanter takibi yapılabiliyor mu? Örnek formlar sunulmuş mu?" },
                             { id: "q-8-3", head: "Muayene raporları sunuldu mu?" },
-                            { id: "q-8-3", head: "Uygulama gözlendi mi?" },
+                            { id: "q-8-4", head: "Uygulama gözlendi mi?" },
                         ]} />
                 <QuestionBody
                     id="27"
@@ -320,7 +320,7 @@ yapıldığına dair sözleşme mevcut mu? (Yönetmelik Md 17 (7) a) b)"
                             { id: "q-8-1", head: "Ek 27" },
                             { id: "q-8-2", head: "Yönetim sisteminde ilgili prosedürler geliştirilmiş mi? Envanter takibi yapılabiliyor mu? Örnek formlar sunulmuş mu?" },
                             { id: "q-8-3", head: "Muayene raporları sunuldu mu?" },
-                            { id: "q-8-3", head: "Uygulama gözlendi mi?" },
+                            { id: "q-8-4", head: "Uygulama gözlendi mi?" },
                         ]} />
             </section>
             <table className="full-width">

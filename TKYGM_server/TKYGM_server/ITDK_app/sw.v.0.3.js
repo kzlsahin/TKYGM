@@ -14,7 +14,7 @@
 // Names of the two caches used in this version of the service worker.
 // Change to v2, etc. when you update any of the local resources, which will
 // in turn trigger the install event again.
-const PRECACHE = 'precache-v0.9';
+const PRECACHE = 'precache-v0.10';
 const RUNTIME = 'runtime';
 const BASEURL = `https://kzlsahin.online/TKYGM/ITDK-v0`;
 
@@ -27,9 +27,9 @@ const PRECACHE_URLS = [
     BASEURL + '/images/UAB_Logo.png',
     BASEURL + '/js/app.v.0.2.js',
     BASEURL + '/js/core.v.0.0.js',    
-    BASEURL + '/js/components.v.0.0.js',
+    BASEURL + '/js/components.v.0.1.js',
     BASEURL + '/js/SurveyForm.v.0.1.js',
-    BASEURL + '/js/FileManager.v.0.1.jsx',
+    BASEURL + '/js/FileManager.v.0.1.js',
     BASEURL + '/lib/jszip.js',
     BASEURL + '/lib/FileSaver.js',
     './manifest.webmanifest',

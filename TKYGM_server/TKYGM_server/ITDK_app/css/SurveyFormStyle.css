@@ -35,20 +35,34 @@ article {
     display: inline-block;
     text-align: center;
     cursor: pointer;
+
 }
 
     .article-banner p {
         vertical-align: Top;
     }
 
+.questionary-article > .article-banner {
+    background-image: url('../images/camera_icon.svg');
+    background-position: center;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+}
 .article-body {
     display: inline-block;
 }
 
 .head-question {
-    padding: 0.5em;
+    padding: 1ch;
     font-weight: 600;
     width: 100%;
+}
+
+.td-question {
+    padding: 1ch;
+}
+.td-question-result {
+    width: 25ch;
 }
 
 select {
