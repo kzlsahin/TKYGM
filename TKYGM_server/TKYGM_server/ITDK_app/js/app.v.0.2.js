@@ -173,7 +173,7 @@ const SaveSurvey = async () => {
         console.log("servey data is content serialized.");
         await DirectoryManager.saveFile("survey.json", content);
         console.log("servey data is saved.");
-        await fm.DownloadFilesAsZip(DirectoryManager.handler, fsm.ReplaceExtension(DirectoryManager.name, 'survey' ));
+        await fm.DownloadFilesAsZip(DirectoryManager.handler, fm.ReplaceExtension(DirectoryManager.directory, 'survey' ));
         //AppState.modified = false;
     }
     catch (err) {
