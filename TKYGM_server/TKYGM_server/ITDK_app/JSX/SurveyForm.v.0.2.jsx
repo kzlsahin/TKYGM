@@ -5,6 +5,9 @@ function SurveyForm() {
             <h1 title="Tersane, Tekne İmal ve Çekek Yeri Yönetmeliği'nin 19'uncu maddesinin 6'ıncı fıkrası / 12'nci maddenin 1'inci fıkrası kapsamında">
                 İnceleme, Tespit ve Denetim Komisyonu Denetim Raporu*
             </h1>
+            <div id="document-date-container">
+                <input type="date" id="document-date" placeholder=""/>
+            </div>
             <section className="survey-header">
                 <table>
                     <tbody>
@@ -17,8 +20,7 @@ function SurveyForm() {
                         <tr>
                             <td><SurveyType id="survet-type" /></td>
                             <td><FacilityType id="facility-type" /></td>
-                            <td><FloatingDeckStatus id="floating-dock-status" /></td>
-                            <td><input type="date" id="document-date" /></td>
+                            <td colSpan="2"><FloatingDeckStatus id="floating-dock-status" /></td>                            
                         </tr>
                     </tbody>
                 </table>
@@ -34,7 +36,7 @@ function SurveyForm() {
                                     Tesis adresi
                                 </td>
                                 <td>
-                                    <input id="facility-address" className="text-state" type="text" />
+                                    <div id="facility-address" className="text-state text-multiline-wide" contentEditable></div>
                                 </td>
                             </tr>
                             <tr>
@@ -42,7 +44,7 @@ function SurveyForm() {
                                     Denetim sırasında Komisyona eşlik eden tesis işleticisi/yetkilendirilmiş kişi bilgisi
                                 </td>
                                 <td>
-                                    <input id="representative-person-name" className="text-state" type="text" />
+                                    <div id="representative-person-name" className="text-state text-multiline-wide" contentEditable></div>
                                 </td>
                             </tr>
                             <tr>

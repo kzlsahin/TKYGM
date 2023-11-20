@@ -4,7 +4,13 @@ function SurveyForm() {
     "data-version": "0.0.0"
   }, /*#__PURE__*/React.createElement("h1", {
     title: "Tersane, Tekne \u0130mal ve \xC7ekek Yeri Y\xF6netmeli\u011Fi'nin 19'uncu maddesinin 6'\u0131nc\u0131 f\u0131kras\u0131 / 12'nci maddenin 1'inci f\u0131kras\u0131 kapsam\u0131nda"
-  }, "\u0130nceleme, Tespit ve Denetim Komisyonu Denetim Raporu*"), /*#__PURE__*/React.createElement("section", {
+  }, "\u0130nceleme, Tespit ve Denetim Komisyonu Denetim Raporu*"), /*#__PURE__*/React.createElement("div", {
+    id: "document-date-container"
+  }, /*#__PURE__*/React.createElement("input", {
+    type: "date",
+    id: "document-date",
+    placeholder: ""
+  })), /*#__PURE__*/React.createElement("section", {
     className: "survey-header"
   }, /*#__PURE__*/React.createElement("table", null, /*#__PURE__*/React.createElement("tbody", null, /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", {
     className: "bold"
@@ -19,25 +25,24 @@ function SurveyForm() {
     id: "survet-type"
   })), /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement(FacilityType, {
     id: "facility-type"
-  })), /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement(FloatingDeckStatus, {
+  })), /*#__PURE__*/React.createElement("td", {
+    colSpan: "2"
+  }, /*#__PURE__*/React.createElement(FloatingDeckStatus, {
     id: "floating-dock-status"
-  })), /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement("input", {
-    type: "date",
-    id: "document-date"
   })))))), /*#__PURE__*/React.createElement("section", {
     className: "survey-prerequisites"
   }, /*#__PURE__*/React.createElement("article", null, /*#__PURE__*/React.createElement("div", {
     className: "article-banner"
   }), /*#__PURE__*/React.createElement("table", {
     className: "article-body"
-  }, /*#__PURE__*/React.createElement("tbody", null, /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", null, "Tesis adresi"), /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement("input", {
+  }, /*#__PURE__*/React.createElement("tbody", null, /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", null, "Tesis adresi"), /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement("div", {
     id: "facility-address",
-    className: "text-state",
-    type: "text"
-  }))), /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", null, "Denetim s\u0131ras\u0131nda Komisyona e\u015Flik eden tesis i\u015Fleticisi/yetkilendirilmi\u015F ki\u015Fi bilgisi"), /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement("input", {
+    className: "text-state text-multiline-wide",
+    contentEditable: true
+  }))), /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", null, "Denetim s\u0131ras\u0131nda Komisyona e\u015Flik eden tesis i\u015Fleticisi/yetkilendirilmi\u015F ki\u015Fi bilgisi"), /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement("div", {
     id: "representative-person-name",
-    className: "text-state",
-    type: "text"
+    className: "text-state text-multiline-wide",
+    contentEditable: true
   }))), /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", null, "\u0130TDK \xFCcreti ile ilgili makbuz Ek 50 olarak kaydedilir."), /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement("select", {
     id: "payment",
     className: "selection-state"

@@ -21,6 +21,21 @@
             font-weight: 600;
         }
 
+#document-date-container{
+    border-bottom: 1px solid black;
+    width: 12ch;
+    display:block;
+    margin: 0 0 1rem auto;
+}
+
+.text-multiline-wide {
+    min-width: 50ch;
+    min-height: 4em;
+    width: 100%;
+    height: fit-content;
+    cursor: text;
+    background-color: transparent;
+}
 article {
     display: grid;
     grid-template-columns: 4em 1fr;
@@ -68,6 +83,7 @@ article {
 select {
     height: 100%;
     margin: 0;
+    padding: 0.5rem;
     width: 100%;
     cursor: pointer;
     border: none;
