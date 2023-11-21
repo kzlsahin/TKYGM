@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-    <Exec Command="C:\Users\deniz\source\repos\TKYGM\TKYGM_server\TKYGM_server\ITDK_app\compile_jsx_files.bat" />
+    <Exec Command="call compile_jsx_files.bat $(ProjectDir)" />
   </Target>
 
 

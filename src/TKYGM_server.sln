@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TKYGM_server", "TKYGM_server\TKYGM_server.csproj", "{703419CD-16F5-4BB4-9214-2113C82D90A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TKYGM_server", "TKYGM_server\TKYGM_server.csproj", "{703419CD-16F5-4BB4-9214-2113C82D90A6}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "reactproject1", "reactproject1\reactproject1.esproj", "{14D487EF-0823-4A9F-B324-52BF5EF505EC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,12 @@ Global
 		{703419CD-16F5-4BB4-9214-2113C82D90A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{703419CD-16F5-4BB4-9214-2113C82D90A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{703419CD-16F5-4BB4-9214-2113C82D90A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14D487EF-0823-4A9F-B324-52BF5EF505EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14D487EF-0823-4A9F-B324-52BF5EF505EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14D487EF-0823-4A9F-B324-52BF5EF505EC}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{14D487EF-0823-4A9F-B324-52BF5EF505EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14D487EF-0823-4A9F-B324-52BF5EF505EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14D487EF-0823-4A9F-B324-52BF5EF505EC}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
