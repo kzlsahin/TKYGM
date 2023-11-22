@@ -28,9 +28,10 @@
     margin: 0 0 1rem auto;
 }
 
-.text-multiline-wide {
-    min-width: 50ch;
-    min-height: 4em;
+.wide-column {
+    width:60%;
+}
+.text-multiline {
     width: 100%;
     height: fit-content;
     cursor: text;

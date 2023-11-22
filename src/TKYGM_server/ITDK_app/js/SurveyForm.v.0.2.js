@@ -34,10 +34,15 @@ function SurveyForm() {
   }, /*#__PURE__*/React.createElement("article", null, /*#__PURE__*/React.createElement("div", {
     className: "article-banner"
   }), /*#__PURE__*/React.createElement("table", {
-    className: "article-body"
-  }, /*#__PURE__*/React.createElement("tbody", null, /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", null, "Tesis adresi"), /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement("div", {
+    className: "article-body",
+    style: {
+      "table-layout": "fixed"
+    }
+  }, /*#__PURE__*/React.createElement("colgroup", null, /*#__PURE__*/React.createElement("col", null), /*#__PURE__*/React.createElement("col", {
+    className: "wide-column"
+  })), /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", null, "Tesis adresi"), /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement("div", {
     id: "facility-address",
-    className: "text-state text-multiline-wide",
+    className: "text-state text-multiline",
     contentEditable: true
   }))), /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", null, "Denetim s\u0131ras\u0131nda Komisyona e\u015Flik eden tesis i\u015Fleticisi/yetkilendirilmi\u015F ki\u015Fi bilgisi"), /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement("div", {
     id: "representative-person-name",
@@ -50,7 +55,7 @@ function SurveyForm() {
     value: "payed"
   }, "Yat\u0131r\u0131ld\u0131"), /*#__PURE__*/React.createElement("option", {
     value: "not-payed"
-  }, "Yat\u0131r\u0131lmad\u0131")))))))), /*#__PURE__*/React.createElement("section", {
+  }, "Yat\u0131r\u0131lmad\u0131"))))))), /*#__PURE__*/React.createElement("section", {
     className: "survey-questionaries"
   }, /*#__PURE__*/React.createElement(QuestionBody, {
     id: "1",

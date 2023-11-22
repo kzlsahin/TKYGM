@@ -6,10 +6,11 @@ function SurveyForm() {
                 İnceleme, Tespit ve Denetim Komisyonu Denetim Raporu*
             </h1>
             <div id="document-date-container">
-                <input type="date" id="document-date" placeholder=""/>
+                <input type="date" id="document-date" placeholder="" />
             </div>
             <section className="survey-header">
                 <table>
+                    
                     <tbody>
                         <tr>
                             <td className="bold">TESIS ADI:</td>
@@ -20,7 +21,7 @@ function SurveyForm() {
                         <tr>
                             <td><SurveyType id="survet-type" /></td>
                             <td><FacilityType id="facility-type" /></td>
-                            <td colSpan="2"><FloatingDeckStatus id="floating-dock-status" /></td>                            
+                            <td colSpan="2"><FloatingDeckStatus id="floating-dock-status" /></td>
                         </tr>
                     </tbody>
                 </table>
@@ -29,14 +30,17 @@ function SurveyForm() {
                 <article>
                     <div className="article-banner">
                     </div>
-                    <table className="article-body">
-                        <tbody>
+                    <table className="article-body" style={{"table-layout": "fixed"}}>
+                        <colgroup>
+                            <col />
+                            <col className="wide-column"  />
+                        </colgroup>
                             <tr>
                                 <td>
                                     Tesis adresi
                                 </td>
                                 <td>
-                                    <div id="facility-address" className="text-state text-multiline-wide" contentEditable></div>
+                                    <div id="facility-address" className="text-state text-multiline" contentEditable></div>
                                 </td>
                             </tr>
                             <tr>
@@ -58,7 +62,6 @@ function SurveyForm() {
                                     </select>
                                 </td>
                             </tr>
-                        </tbody>
                     </table>
                 </article>
             </section>

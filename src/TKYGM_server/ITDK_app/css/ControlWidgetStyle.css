@@ -1,18 +1,21 @@
 ﻿#controls-widget {
     background-color: white;
-    display: inline-block;
     position: absolute;
+    top: 2rem;
+    left: 2rem;
     padding: 0;
     width: 5ch;
-    height: 5ch;
-    overflow: hidden;
+    height: fit-content;
 }
 
-    #controls-widget[open=true] {
-        overflow: visible;
-        width: fit-content;
-        height: fit-content;
-    }
+.widget-cover {
+    background-color: transparent;
+    display: block;
+    padding: 0.5ch;
+    width: 100%;
+    height: 2.4rem;
+    cursor: pointer;
+}
 
 .widget-body {
     padding: 0.5ch;
@@ -25,6 +28,22 @@
     transition: all ease-in 1s;
     width: fit-content;
     height: fit-content;
+}
+
+#controls-widget[open=true] .widget-body {
+    display: flex;
+}
+
+#controls-widget[open=false] .widget-body {
+    display: none;
+}
+
+#controls-widget[open=true] .widget-cover {
+    display: none;
+}
+
+#controls-widget[open=false] .widget-cover {
+    display: block;
 }
 
 .widget-body-item {
@@ -44,40 +63,14 @@
         box-shadow: 2px 2px 3px 3px lightgray;
     }
 
-#controls-widget[open=true].widget-cover {
-    display: none;
-}
-
-#controls-widget[open=true] .widget-body {
-    display: flex;
-}
-
-#controls-widget[open=false] .widget-cover {
-    display: block;
-    position: relative;
-    padding: 0.5ch;
-    display: block;
-    width: 100%;
-    height: fit-content;
-}
-
-#controls-widget[open=false] .widget-body {
-    display: none;
-}
 
 .cover-line {
     display: block;
     background-color: black;
-    margin-top: 0.8ch;
-    margin-bottom: 0.8ch;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
     width: 80%;
-    height: 0.2ch;
-}
-
-.widget-cover {
-    position: relative;
-    padding: 0.5ch;
-    display: block;
-    width: 100%;
-    height: fit-content;
+    height: 0.2rem;
 }
