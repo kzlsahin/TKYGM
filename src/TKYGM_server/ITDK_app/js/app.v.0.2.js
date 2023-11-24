@@ -315,7 +315,7 @@ const OnClick = (event) => {
 window.addEventListener("load", onStartup);
 window.addEventListener("beforeprint", onBeforePrint);
 window.addEventListener("afterprint", onAfterPrint);
-window.addEventListener("click", OnClick);
+document.body.addEventListener("click", OnClick);
 
 document
     .getElementById("btn-new-survey-from-file")
