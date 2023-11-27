@@ -15,7 +15,7 @@
 
     <link rel="icon" HREF="./images/UAB_Logo.png">
     <link rel="manifest" href="./manifest.webmanifest">
-    <link href="./css/style.v.0.2.css" rel="stylesheet" type="text/css">
+    <link href="./css/style.v.0.3.css" rel="stylesheet" type="text/css">
     <link href="./css/ControlWidgetStyle.v.0.1.css" rel="stylesheet" type="text/css">
     <link href="./css/SurveyFormStyle.v.0.2.css" rel="stylesheet" type="text/css">
     <script type="module" src="./lib/jszip.js"></script>
@@ -51,40 +51,6 @@
         <input id="img-inp-1" type="file" accept="image/*" capture="camera" />
         <input id="directory-input" type="file" webkitdirectory directory>
     </div>
-
-
-    <script>
-
-        async function processDirectory() {
-            try {
-                const directoryInput = document.getElementById("directoryInput");
-                const [directoryHandle] = directoryInput.files;
-
-                const allFiles = await getAllFiles(directoryHandle);
-                console.log(allFiles);
-            } catch (error) {
-                console.error("Error:", error);
-            }
-        }
-
-        async function getAllFiles(directoryHandle) {
-            const allFiles = [];
-
-            async function processDirectoryRecursively(directoryHandle) {
-                const entries = await directoryHandle.getEntries();
-                for await (const entry of entries) {
-                    if (entry.isFile) {
-                        allFiles.push(entry);
-                    } else if (entry.isDirectory) {
-                        await processDirectoryRecursively(entry);
-                    }
-                }
-            }
-
-            await processDirectoryRecursively(directoryHandle);
-            return allFiles;
-        }
-    </script>
     <div id="root">
     </div>
 
