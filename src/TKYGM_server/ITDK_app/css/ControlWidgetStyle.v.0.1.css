@@ -18,6 +18,7 @@
 }
 
 .widget-body {
+    background-color: white;
     padding: 0.5ch;
     display: flex;
     flex-flow: column nowrap;
