@@ -15,7 +15,7 @@ function SurveyForm() {
                         <tr>
                             <td className="bold">TESIS ADI:</td>
                             <td colSpan="3">
-                                <input id="facility-name" className="text-state" type="text" placeholder="Tesis Adını Girin" />
+                                <TextInput name="facility-name" className="full-width"  title="tesis adı" placeHolder="Tesis Adını Girin" />
                             </td>
                         </tr>
                         <tr>
@@ -108,7 +108,7 @@ function SurveyForm() {
                     items={
                         [
                             { id: "q-4-1", head: "Ek 4" },
-                            { id: "q-4-2", head: "Ön İzinine konu yüzölçüm:-" },
+                            { id: "q-4-2", head: "Ön İzinine konu yüzölçüm:-", input: <TextInput name="acreage" title="yüz ölçümü" placeHolder="0.00"/>},
                             { id: "q-4-3", head: "Kullanma iznine konu yüzölçüm:   m2" },
                             { id: "q-4-4", head: "İrtifak Hakkı ve Tapu:" },
                             { id: "q-4-5", head: "Tapu/Kira Sözleşmesi:" },
