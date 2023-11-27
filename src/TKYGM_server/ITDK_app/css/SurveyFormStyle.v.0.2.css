@@ -101,7 +101,9 @@ article {
 .td-question-result {
     width: 25ch;
 }
-
+input {
+    font-size: 14pt;
+}
 select {
     height: 100%;
     margin: 0;
@@ -162,6 +164,9 @@ td {
 @media print {
     .questionary-article > .article-banner {
         background-image: none;
+    }
+    input {
+        font-size: 10pt;
     }
     select {
         padding:0;
