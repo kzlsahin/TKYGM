@@ -10,7 +10,7 @@ function SurveyForm() {
             </div>
             <section className="survey-header">
                 <table>
-                    
+
                     <tbody>
                         <tr>
                             <td className="bold">TESIS ADI:</td>
@@ -30,38 +30,40 @@ function SurveyForm() {
                 <article>
                     <div className="article-banner">
                     </div>
-                    <table className="article-body" style={{"table-layout": "fixed"}}>
+                    <table className="article-body" style={{ "tableLayout": "fixed" }}>
                         <colgroup>
                             <col />
-                            <col className="wide-column"  />
+                            <col className="wide-column" />
                         </colgroup>
-                            <tr>
-                                <td>
-                                    Tesis adresi
-                                </td>
-                                <td>
-                                    <div id="facility-address" className="text-state text-multiline" contentEditable></div>
-                                </td>
+                        <tbody>
+                        <tr>
+                            <td>
+                                Tesis adresi
+                            </td>
+                            <td>
+                                <div id="facility-address" className="text-state text-multiline" contentEditable></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Denetim sırasında Komisyona eşlik eden tesis işleticisi/yetkilendirilmiş kişi bilgisi
+                            </td>
+                            <td>
+                                <div id="representative-person-name" className="text-state text-multiline-wide" contentEditable></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                İTDK ücreti ile ilgili makbuz Ek 50 olarak kaydedilir.
+                            </td>
+                            <td>
+                                <select id="payment" className="selection-state">
+                                    <option value="payed">Yatırıldı</option>
+                                    <option value="not-payed">Yatırılmadı</option>
+                                </select>
+                            </td>
                             </tr>
-                            <tr>
-                                <td>
-                                    Denetim sırasında Komisyona eşlik eden tesis işleticisi/yetkilendirilmiş kişi bilgisi
-                                </td>
-                                <td>
-                                    <div id="representative-person-name" className="text-state text-multiline-wide" contentEditable></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    İTDK ücreti ile ilgili makbuz Ek 50 olarak kaydedilir.
-                                </td>
-                                <td>
-                                    <select id="payment" className="selection-state">
-                                        <option value="payed">Yatırıldı</option>
-                                        <option value="not-payed">Yatırılmadı</option>
-                                    </select>
-                                </td>
-                            </tr>
+                        </tbody>
                     </table>
                 </article>
             </section>
@@ -312,20 +314,225 @@ yapıldığına dair sözleşme mevcut mu? (Yönetmelik Md 17 (7) a) b)"
                     head="TÜRKAK A tipi muayene kuruluşu olarak yetki alan kuruluşlara taşınabilir veya taşınamaz basınçlı ekipmanların, boru hatlarının kontrolleri yaptırılmış mı?"
                     items={
                         [
-                            { id: "q-8-1", head: "Ek 26 " },
-                            { id: "q-8-2", head: "Yönetim sisteminde ilgili prosedürler geliştirilmiş mi? Envanter takibi yapılabiliyor mu? Örnek formlar sunulmuş mu?" },
-                            { id: "q-8-3", head: "Muayene raporları sunuldu mu?" },
-                            { id: "q-8-4", head: "Uygulama gözlendi mi?" },
+                            { id: "q-26-1", head: "Ek 26 " },
+                            { id: "q-26-2", head: "Yönetim sisteminde ilgili prosedürler geliştirilmiş mi? Envanter takibi yapılabiliyor mu? Örnek formlar sunulmuş mu?" },
+                            { id: "q-26-3", head: "Muayene raporları sunuldu mu?" },
+                            { id: "q-26-4", head: "Uygulama gözlendi mi?" },
                         ]} />
                 <QuestionBody
                     id="27"
                     head="TÜRKAK A tipi muayene kuruluşu olarak yetki alan kuruluşlara ırgat, kaldırma ve iletme makinalarının kontrolleri yaptırılmış mı?"
                     items={
                         [
-                            { id: "q-8-1", head: "Ek 27" },
-                            { id: "q-8-2", head: "Yönetim sisteminde ilgili prosedürler geliştirilmiş mi? Envanter takibi yapılabiliyor mu? Örnek formlar sunulmuş mu?" },
-                            { id: "q-8-3", head: "Muayene raporları sunuldu mu?" },
-                            { id: "q-8-4", head: "Uygulama gözlendi mi?" },
+                            { id: "q-27-1", head: "Ek 27" },
+                            { id: "q-27-2", head: "Yönetim sisteminde ilgili prosedürler geliştirilmiş mi? Envanter takibi yapılabiliyor mu? Örnek formlar sunulmuş mu?" },
+                            { id: "q-27-3", head: "Muayene raporları sunuldu mu?" },
+                            { id: "q-27-4", head: "Uygulama gözlendi mi?" },
+                        ]} />
+                <QuestionBody
+                    id="28"
+                    head="TÜRKAK A tipi muayene kuruluşu olarak yetki alan kuruluşlara topraklama ölçümleri, elektrik kabloları ve panoların kontrolleri yaptırılmış mı?"
+                    items={
+                        [
+                            { id: "q-28-1", head: "Ek 28" },
+                            { id: "q-28-2", head: "Yönetim sisteminde ilgili prosedürler geliştirilmiş mi? Envanter takibi yapılabiliyor mu? Örnek formlar sunulmuş mu?" },
+                            { id: "q-28-3", head: "Muayene raporları sunuldu mu?" },
+                            { id: "q-28-4", head: "Uygulama gözlendi mi?" },
+                        ]} />
+                <QuestionBody
+                    id="29"
+                    head="Tüm ırgat, kaldırma ve iletme makinaları, taşınabilir veya taşınamaz basınçlı ekipmanlar ve boru hatlarının düzenli bakım-tutum kayıtları tutulmakta mıdır?"
+                    items={
+                        [
+                            { id: "q-29-1", head: "Ek 29" },
+                            { id: "q-29-2", head: "Yönetim sisteminde ilgili prosedürler geliştirilmiş mi? Envanter takibi yapılabiliyor mu? Örnek formlar sunulmuş mu?" },
+                            { id: "q-29-3", head: "Bakım-tutum kayıt raporları sunuldu mu?" },
+                            { id: "q-29-4", head: "Uygulama gözlendi mi?" },
+                        ]} />
+                <QuestionBody
+                    id="30"
+                    head="Tersanelerin sınırlar ve çalışma alanlarının görüntülenebildiği kapalı devre kamera sistemi 
+var mı? Görüntü kayıtları en az bir ay tesis yetkilisince saklanmakta mıdır? (Tekne imal yeri ve çekek yerinde aranmaz) 
+(Yönetmelik Md 17 (10) - Kısmi İşletme İzni için aranmaz."
+                    items={
+                        [
+                            { id: "q-30-1", head: "Ek 30 (Denetim/başvuru tarihinden bir ay öncesine ait görsellerden örnekler)" },
+                            { id: "q-30-2", head: "Çalışma alanları, yanaşmış gemilerin bordaları, yüzer havuzun/tesisin deniz cephesi geneli görüntülenebiliyor mu?" },
+                        ]} />
+                <QuestionBody
+                    id="31"
+                    head="Çalışanların iş sağlığı ve güvenliği eğitimleri ile ilgili program mevcut mu?"
+                    items={
+                        [
+                            { id: "q-31-1", head: "Ek 31" },
+                            { id: "q-31-2", head: "Eğitim yapıldığına dair kayıtlar sunulmuş mu?" },
+                            { id: "q-31-3", head: "Eğitimin sağlanabileceği mekan/imkanlar yeterli mi?" },
+                            { id: "q-31-4", head: "Uygulama gözlendi mi / Çalışan beyanları tutarlı mı?" },
+                        ]} />
+                <QuestionBody
+                    id="32"
+                    head="İş başı eğitimleri verilmekte midir?"
+                    items={
+                        [
+                            { id: "q-32-1", head: "Ek 32" },
+                            { id: "q-32-2", head: "Eğitim yapıldığına dair kayıtlar sunulmuş mu?" },
+                            { id: "q-32-3", head: "Eğitimin sağlanabileceği mekan/imkanlar yeterli mi?" },
+                            { id: "q-32-4", head: "Uygulama gözlendi mi / Çalışan beyanları tutarlı mı?" },
+                        ]} />
+                <QuestionBody
+                    id="33"
+                    head="Çalışanlar ve çalışma alanlarına göre ilgili esaslara uygun kişisel koruyucu donanım kullanılmakta mıdır? "
+                    items={
+                        [
+                            { id: "q-33-1", head: "Ek 33" },
+                            { id: "q-33-2", head: "Yönetim sisteminde ilgili prosedürler geliştirilmiş mi? Örnek formlar sunulmuş mu?" },
+                            { id: "q-33-3", head: "Uygulama gözlendi mi?" },
+                        ]} />
+                <QuestionBody
+                    id="34"
+                    head="Kaldırma ve çekme gibi farklı işler için kullanılan sapan, halat ve kilit gibi ekipmanların envateri mevcut mu? Periyodik test/muayene/kontrolleri yapılmakta mı?"
+                    items={
+                        [
+                            { id: "q-34-1", head: "Ek 34" },
+                            { id: "q-34-2", head: "Yönetim sisteminde ilgili prosedürler geliştirilmiş mi? Örnek formlar sunulmuş mu?" },
+                            { id: "q-34-3", head: "Uygulama gözlendi mi?" },
+                        ]} />
+                <QuestionBody
+                    id="35"
+                    head="Tesisin her yerinden duyulabilen siren sistemi veya acil anons sistemi bulunmakta mıdır? "
+                    items={
+                        [
+                            { id: "q-35-1", head: "Ek 35 (Mevcut ise kısa video kayıtları eklenebilir.)" },
+                            { id: "q-35-2", head: "İlgili prosedrülerde siren ve anons sistemi öngörülmüş mü?" },
+                            { id: "q-35-3", head: "Mevcıut ise yüzer havuz dahil tesisin her yerinden duyuluyor mu?" },
+                        ]} />
+                <QuestionBody
+                    id="36"
+                    head="Sıcak çalışma/yüksekte çalışma/gazdan arındırma gibi özellikli işlerle ilgili talimatlar/uygulamalar mevcut mu?"
+                    items={
+                        [
+                            { id: "q-36-1", head: "Ek 32" },
+                            { id: "q-36-2", head: "Yönetim sisteminde ilgili prosedürler geliştirilmiş mi? Örnek formlar sunulmuş mu?" },
+                            { id: "q-36-3", head: "Uygulama gözlendi mi?" },
+                        ]} />
+                <QuestionBody
+                    id="37"
+                    head="Acil durumu müdahale merkezinde bulunması gereken teçhizat ve merkezden sorumlu personel belirlenmiş mi?"
+                    items={
+                        [
+                            { id: "q-37-1", head: "Ek 37" },
+                            { id: "q-37-2", head: "Yönetim sisteminde ilgili prosedürler geliştirilmiş mi? Örnek formlar sunulmuş mu?" },
+                            { id: "q-37-3", head: "Uygulama gözlendi mi?" },
+                        ]} />
+                <QuestionBody
+                    id="38"
+                    head="Acil durumu müdahale merkezinde bulunan teçhizatın periyodik kontrolleri ile bakım-tutumu yapılıyor mu?"
+                    items={
+                        [
+                            { id: "q-38-1", head: "Ek 38" },
+                            { id: "q-38-2", head: "Yönetim sisteminde ilgili prosedürler geliştirilmiş mi? Örnek formlar sunulmuş mu?" },
+                            { id: "q-38-3", head: "Uygulama gözlendi mi?" },
+                        ]} />
+                <QuestionBody
+                    id="39"
+                    head=" İş ekipmanlarının kullanım talimatları mevcut mu?"
+                    items={
+                        [
+                            { id: "q-39-1", head: "Ek 39" },
+                            { id: "q-39-2", head: "Yönetim sisteminde ilgili prosedürler geliştirilmiş mi? Örnek formlar sunulmuş mu?" },
+                        ]} />
+                <QuestionBody
+                    id="40"
+                    head="Geçici atık depolama alanları mevcut mu?"
+                    items={
+                        [
+                            { id: "q-40-1", head: "Ek 40" },
+                            { id: "q-40-2", head: "Belirlenmiş alanlara ulaşım için tesis içi yollar düzenlenmiş mi?" },
+                        ]} />
+                <QuestionBody
+                    id="41"
+                    head="Yüzer havuza gemi alınması ve havuzun daldırılması/İskele veya rıhtıma gemi yanaştırılması/gemi kızaklanması vb. 
+işlerinde emniyet ve çevrenin korunmasını sağlayıcı önlemler alınmakta mıdır?"
+                    items={
+                        [
+                            { id: "q-41-1", head: "Ek 40" },
+                            { id: "q-41-2", head: "Yönetim sisteminde ilgili prosedürler geliştirilmiş mi? Örnek formlar sunulmuş mu?" },
+                            { id: "q-41-3", head: "Uygulama gözlendi mi?" },
+                        ]} />
+                <QuestionBody
+                    id="42"
+                    head="Yüzer havuzdaki/iskeledeki/rıhtımdaki/kızaktaki gemide çalışma yapılması sırasında alınacak çevrenin korunmasıyla ilgili tedbirler belirlenmiş midir?"
+                    items={
+                        [
+                            { id: "q-42-1", head: "Ek 42" },
+                            { id: "q-42-2", head: "Yönetim sisteminde ilgili prosedürler geliştirilmiş mi? Örnek formlar sunulmuş mu?" },
+                            { id: "q-42-3", head: "Uygulama gözlendi mi?" },
+                        ]} />
+                <QuestionBody
+                    id="43"
+                    head="Yüzer havuz bağlama planı mevcut mu?"
+                    items={
+                        [
+                            { id: "q-43-1", head: "Ek 43 (Onaylı planın ölçekli taratılmış kopyası sunulmuş mu?)" },
+                            { id: "q-43-2", head: "Onaylı Bağlama Planı ile tesisin fiili durumu uyumlu mu?" },
+                            { id: "q-43-3", head: "Onaylanmak üzere sunulmuş taslak Plan mevcut mu?" },
+                        ]} />
+                <QuestionBody
+                    id="44"
+                    head="Yüzer havuz işletme izni belgesi olup olmadığı (Yönetmelik Md 14 )"
+                    items={
+                        [
+                            { id: "q-44-1", head: "Ek 44" },
+                        ]} />
+                <QuestionBody
+                    id="45"
+                    head="Çelik yapılı yüzer havuzların planlarına göre konstrüksiyon elemanlarının kalınlık 
+ölçümünü içeren yetkilendirilmiş kuruluşlardan alınacak klas sörvey uygunluk raporunun beş yılda bir İdareye ibrazı yapılmış mı? (Yönetmelik Md 14 (7) )"
+                    items={
+                        [
+                            { id: "q-45-1", head: "Ek 45 (Geçerli Klas Belgesi yeterli olup taratılarak Ek olarak konulmalıdır.)" },
+                        ]} />
+                <QuestionBody
+                    id="46"
+                    head="Yüzer havuzun tesis dışında su aracı olarak kullanılıyor ise su aracı uygunluk belgesi olup olmadığı (Yönetmelik Md 14 (9) )"
+                    items={
+                        [
+                            { id: "q-40-1", head: "Ek 46" },
+                        ]} />
+                <QuestionBody
+                    id="47"
+                    head="Yüzer havuzun bağlanmasında faydalanılan ekipman/donanım gerekli periyodik kontrol ve teste tabi tutulmakta mı, 
+bakım-tutumları yapılmakta mı? (Babalar, halat, sapan, zincir ve kilitler vs.)"
+                    items={
+                        [
+                            { id: "q-47-1", head: "Ek 47" },
+                            { id: "q-47-2", head: "Yönetim sisteminde ilgili prosedürler geliştirilmiş mi? Envanter takibi yapılabiliyor mu? Örnek formlar sunulmuş mu?" },
+                            { id: "q-47-3", head: "Muayene  ve bakım-tutum kayıt raporları sunuldu mu?" },
+                            { id: "q-47-4", head: "Uygulama gözlendi mi?" },
+                        ]} />
+                <QuestionBody
+                    id="48"
+                    head="Tonoz, dolfen gibi bağlantı elemanlarının, yüzer havuzun bağlama planına uygun olarak emniyetli bir şekilde 
+tutabileceğine dair yetkilendirilmiş kuruluşlardan alınmış rapor mevcut mu? "
+                    items={
+                        [
+                            { id: "q-48-1", head: "Ek 48" },
+                            { id: "q-48-2", head: "Yönetim sisteminde ilgili prosedürler geliştirilmiş mi? Envanter takibi yapılabiliyor mu? Örnek formlar sunulmuş mu?" },
+                            { id: "q-48-3", head: "Doküman içeriği Bağlama Planı ile uyumlu mu?" },
+                        ]} />
+                <QuestionBody
+                    id="49"
+                    head="Enerji, ulaşım ve altyapı projeleri ile sanayi tesislerine yönelik çelik konstrüksiyonlar tersane ve tekne imal yerlerinde yapılıyor mu? Yapılıyor ise İdareden izin alınmış mı? (Yönetmelik Md 20 (8) )"
+                    items={
+                        [
+                            { id: "q-49-1", head: "Ek 49 (Yapılıyor ise İzin yazısı; Yapılmıyor ise yapılmadığını beyan eden imzalı bir yazı sunulubilir.)" },
+                        ]} />
+                <QuestionBody
+                    id="50"
+                    head="İTDK ücreti ile ilgili makbuz"
+                    items={
+                        [
+                            { id: "q-47-1", head: "Ek 50" },
                         ]} />
             </section>
             <table className="full-width">

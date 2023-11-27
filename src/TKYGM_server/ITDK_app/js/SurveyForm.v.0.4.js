@@ -36,11 +36,11 @@ function SurveyForm() {
   }), /*#__PURE__*/React.createElement("table", {
     className: "article-body",
     style: {
-      "table-layout": "fixed"
+      "tableLayout": "fixed"
     }
   }, /*#__PURE__*/React.createElement("colgroup", null, /*#__PURE__*/React.createElement("col", null), /*#__PURE__*/React.createElement("col", {
     className: "wide-column"
-  })), /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", null, "Tesis adresi"), /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement("div", {
+  })), /*#__PURE__*/React.createElement("tbody", null, /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", null, "Tesis adresi"), /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement("div", {
     id: "facility-address",
     className: "text-state text-multiline",
     contentEditable: true
@@ -55,7 +55,7 @@ function SurveyForm() {
     value: "payed"
   }, "Yat\u0131r\u0131ld\u0131"), /*#__PURE__*/React.createElement("option", {
     value: "not-payed"
-  }, "Yat\u0131r\u0131lmad\u0131"))))))), /*#__PURE__*/React.createElement("section", {
+  }, "Yat\u0131r\u0131lmad\u0131")))))))), /*#__PURE__*/React.createElement("section", {
     className: "survey-questionaries"
   }, /*#__PURE__*/React.createElement(QuestionBody, {
     id: "1",
@@ -410,33 +410,308 @@ function SurveyForm() {
     id: "26",
     head: "T\xDCRKAK A tipi muayene kurulu\u015Fu olarak yetki alan kurulu\u015Flara ta\u015F\u0131nabilir veya ta\u015F\u0131namaz bas\u0131n\xE7l\u0131 ekipmanlar\u0131n, boru hatlar\u0131n\u0131n kontrolleri yapt\u0131r\u0131lm\u0131\u015F m\u0131?",
     items: [{
-      id: "q-8-1",
+      id: "q-26-1",
       head: "Ek 26 "
     }, {
-      id: "q-8-2",
+      id: "q-26-2",
       head: "Yönetim sisteminde ilgili prosedürler geliştirilmiş mi? Envanter takibi yapılabiliyor mu? Örnek formlar sunulmuş mu?"
     }, {
-      id: "q-8-3",
+      id: "q-26-3",
       head: "Muayene raporları sunuldu mu?"
     }, {
-      id: "q-8-4",
+      id: "q-26-4",
       head: "Uygulama gözlendi mi?"
     }]
   }), /*#__PURE__*/React.createElement(QuestionBody, {
     id: "27",
     head: "T\xDCRKAK A tipi muayene kurulu\u015Fu olarak yetki alan kurulu\u015Flara \u0131rgat, kald\u0131rma ve iletme makinalar\u0131n\u0131n kontrolleri yapt\u0131r\u0131lm\u0131\u015F m\u0131?",
     items: [{
-      id: "q-8-1",
+      id: "q-27-1",
       head: "Ek 27"
     }, {
-      id: "q-8-2",
+      id: "q-27-2",
       head: "Yönetim sisteminde ilgili prosedürler geliştirilmiş mi? Envanter takibi yapılabiliyor mu? Örnek formlar sunulmuş mu?"
     }, {
-      id: "q-8-3",
+      id: "q-27-3",
       head: "Muayene raporları sunuldu mu?"
     }, {
-      id: "q-8-4",
+      id: "q-27-4",
       head: "Uygulama gözlendi mi?"
+    }]
+  }), /*#__PURE__*/React.createElement(QuestionBody, {
+    id: "28",
+    head: "T\xDCRKAK A tipi muayene kurulu\u015Fu olarak yetki alan kurulu\u015Flara topraklama \xF6l\xE7\xFCmleri, elektrik kablolar\u0131 ve panolar\u0131n kontrolleri yapt\u0131r\u0131lm\u0131\u015F m\u0131?",
+    items: [{
+      id: "q-28-1",
+      head: "Ek 28"
+    }, {
+      id: "q-28-2",
+      head: "Yönetim sisteminde ilgili prosedürler geliştirilmiş mi? Envanter takibi yapılabiliyor mu? Örnek formlar sunulmuş mu?"
+    }, {
+      id: "q-28-3",
+      head: "Muayene raporları sunuldu mu?"
+    }, {
+      id: "q-28-4",
+      head: "Uygulama gözlendi mi?"
+    }]
+  }), /*#__PURE__*/React.createElement(QuestionBody, {
+    id: "29",
+    head: "T\xFCm \u0131rgat, kald\u0131rma ve iletme makinalar\u0131, ta\u015F\u0131nabilir veya ta\u015F\u0131namaz bas\u0131n\xE7l\u0131 ekipmanlar ve boru hatlar\u0131n\u0131n d\xFCzenli bak\u0131m-tutum kay\u0131tlar\u0131 tutulmakta m\u0131d\u0131r?",
+    items: [{
+      id: "q-29-1",
+      head: "Ek 29"
+    }, {
+      id: "q-29-2",
+      head: "Yönetim sisteminde ilgili prosedürler geliştirilmiş mi? Envanter takibi yapılabiliyor mu? Örnek formlar sunulmuş mu?"
+    }, {
+      id: "q-29-3",
+      head: "Bakım-tutum kayıt raporları sunuldu mu?"
+    }, {
+      id: "q-29-4",
+      head: "Uygulama gözlendi mi?"
+    }]
+  }), /*#__PURE__*/React.createElement(QuestionBody, {
+    id: "30",
+    head: "Tersanelerin s\u0131n\u0131rlar ve \xE7al\u0131\u015Fma alanlar\u0131n\u0131n g\xF6r\xFCnt\xFClenebildi\u011Fi kapal\u0131 devre kamera sistemi \r\nvar m\u0131? G\xF6r\xFCnt\xFC kay\u0131tlar\u0131 en az bir ay tesis yetkilisince saklanmakta m\u0131d\u0131r? (Tekne imal yeri ve \xE7ekek yerinde aranmaz) \r\n(Y\xF6netmelik Md 17 (10) - K\u0131smi \u0130\u015Fletme \u0130zni i\xE7in aranmaz.",
+    items: [{
+      id: "q-30-1",
+      head: "Ek 30 (Denetim/başvuru tarihinden bir ay öncesine ait görsellerden örnekler)"
+    }, {
+      id: "q-30-2",
+      head: "Çalışma alanları, yanaşmış gemilerin bordaları, yüzer havuzun/tesisin deniz cephesi geneli görüntülenebiliyor mu?"
+    }]
+  }), /*#__PURE__*/React.createElement(QuestionBody, {
+    id: "31",
+    head: "\xC7al\u0131\u015Fanlar\u0131n i\u015F sa\u011Fl\u0131\u011F\u0131 ve g\xFCvenli\u011Fi e\u011Fitimleri ile ilgili program mevcut mu?",
+    items: [{
+      id: "q-31-1",
+      head: "Ek 31"
+    }, {
+      id: "q-31-2",
+      head: "Eğitim yapıldığına dair kayıtlar sunulmuş mu?"
+    }, {
+      id: "q-31-3",
+      head: "Eğitimin sağlanabileceği mekan/imkanlar yeterli mi?"
+    }, {
+      id: "q-31-4",
+      head: "Uygulama gözlendi mi / Çalışan beyanları tutarlı mı?"
+    }]
+  }), /*#__PURE__*/React.createElement(QuestionBody, {
+    id: "32",
+    head: "\u0130\u015F ba\u015F\u0131 e\u011Fitimleri verilmekte midir?",
+    items: [{
+      id: "q-32-1",
+      head: "Ek 32"
+    }, {
+      id: "q-32-2",
+      head: "Eğitim yapıldığına dair kayıtlar sunulmuş mu?"
+    }, {
+      id: "q-32-3",
+      head: "Eğitimin sağlanabileceği mekan/imkanlar yeterli mi?"
+    }, {
+      id: "q-32-4",
+      head: "Uygulama gözlendi mi / Çalışan beyanları tutarlı mı?"
+    }]
+  }), /*#__PURE__*/React.createElement(QuestionBody, {
+    id: "33",
+    head: "\xC7al\u0131\u015Fanlar ve \xE7al\u0131\u015Fma alanlar\u0131na g\xF6re ilgili esaslara uygun ki\u015Fisel koruyucu donan\u0131m kullan\u0131lmakta m\u0131d\u0131r? ",
+    items: [{
+      id: "q-33-1",
+      head: "Ek 33"
+    }, {
+      id: "q-33-2",
+      head: "Yönetim sisteminde ilgili prosedürler geliştirilmiş mi? Örnek formlar sunulmuş mu?"
+    }, {
+      id: "q-33-3",
+      head: "Uygulama gözlendi mi?"
+    }]
+  }), /*#__PURE__*/React.createElement(QuestionBody, {
+    id: "34",
+    head: "Kald\u0131rma ve \xE7ekme gibi farkl\u0131 i\u015Fler i\xE7in kullan\u0131lan sapan, halat ve kilit gibi ekipmanlar\u0131n envateri mevcut mu? Periyodik test/muayene/kontrolleri yap\u0131lmakta m\u0131?",
+    items: [{
+      id: "q-34-1",
+      head: "Ek 34"
+    }, {
+      id: "q-34-2",
+      head: "Yönetim sisteminde ilgili prosedürler geliştirilmiş mi? Örnek formlar sunulmuş mu?"
+    }, {
+      id: "q-34-3",
+      head: "Uygulama gözlendi mi?"
+    }]
+  }), /*#__PURE__*/React.createElement(QuestionBody, {
+    id: "35",
+    head: "Tesisin her yerinden duyulabilen siren sistemi veya acil anons sistemi bulunmakta m\u0131d\u0131r? ",
+    items: [{
+      id: "q-35-1",
+      head: "Ek 35 (Mevcut ise kısa video kayıtları eklenebilir.)"
+    }, {
+      id: "q-35-2",
+      head: "İlgili prosedrülerde siren ve anons sistemi öngörülmüş mü?"
+    }, {
+      id: "q-35-3",
+      head: "Mevcıut ise yüzer havuz dahil tesisin her yerinden duyuluyor mu?"
+    }]
+  }), /*#__PURE__*/React.createElement(QuestionBody, {
+    id: "36",
+    head: "S\u0131cak \xE7al\u0131\u015Fma/y\xFCksekte \xE7al\u0131\u015Fma/gazdan ar\u0131nd\u0131rma gibi \xF6zellikli i\u015Flerle ilgili talimatlar/uygulamalar mevcut mu?",
+    items: [{
+      id: "q-36-1",
+      head: "Ek 32"
+    }, {
+      id: "q-36-2",
+      head: "Yönetim sisteminde ilgili prosedürler geliştirilmiş mi? Örnek formlar sunulmuş mu?"
+    }, {
+      id: "q-36-3",
+      head: "Uygulama gözlendi mi?"
+    }]
+  }), /*#__PURE__*/React.createElement(QuestionBody, {
+    id: "37",
+    head: "Acil durumu m\xFCdahale merkezinde bulunmas\u0131 gereken te\xE7hizat ve merkezden sorumlu personel belirlenmi\u015F mi?",
+    items: [{
+      id: "q-37-1",
+      head: "Ek 37"
+    }, {
+      id: "q-37-2",
+      head: "Yönetim sisteminde ilgili prosedürler geliştirilmiş mi? Örnek formlar sunulmuş mu?"
+    }, {
+      id: "q-37-3",
+      head: "Uygulama gözlendi mi?"
+    }]
+  }), /*#__PURE__*/React.createElement(QuestionBody, {
+    id: "38",
+    head: "Acil durumu m\xFCdahale merkezinde bulunan te\xE7hizat\u0131n periyodik kontrolleri ile bak\u0131m-tutumu yap\u0131l\u0131yor mu?",
+    items: [{
+      id: "q-38-1",
+      head: "Ek 38"
+    }, {
+      id: "q-38-2",
+      head: "Yönetim sisteminde ilgili prosedürler geliştirilmiş mi? Örnek formlar sunulmuş mu?"
+    }, {
+      id: "q-38-3",
+      head: "Uygulama gözlendi mi?"
+    }]
+  }), /*#__PURE__*/React.createElement(QuestionBody, {
+    id: "39",
+    head: " \u0130\u015F ekipmanlar\u0131n\u0131n kullan\u0131m talimatlar\u0131 mevcut mu?",
+    items: [{
+      id: "q-39-1",
+      head: "Ek 39"
+    }, {
+      id: "q-39-2",
+      head: "Yönetim sisteminde ilgili prosedürler geliştirilmiş mi? Örnek formlar sunulmuş mu?"
+    }]
+  }), /*#__PURE__*/React.createElement(QuestionBody, {
+    id: "40",
+    head: "Ge\xE7ici at\u0131k depolama alanlar\u0131 mevcut mu?",
+    items: [{
+      id: "q-40-1",
+      head: "Ek 40"
+    }, {
+      id: "q-40-2",
+      head: "Belirlenmiş alanlara ulaşım için tesis içi yollar düzenlenmiş mi?"
+    }]
+  }), /*#__PURE__*/React.createElement(QuestionBody, {
+    id: "41",
+    head: "Y\xFCzer havuza gemi al\u0131nmas\u0131 ve havuzun dald\u0131r\u0131lmas\u0131/\u0130skele veya r\u0131ht\u0131ma gemi yana\u015Ft\u0131r\u0131lmas\u0131/gemi k\u0131zaklanmas\u0131 vb. \r\ni\u015Flerinde emniyet ve \xE7evrenin korunmas\u0131n\u0131 sa\u011Flay\u0131c\u0131 \xF6nlemler al\u0131nmakta m\u0131d\u0131r?",
+    items: [{
+      id: "q-41-1",
+      head: "Ek 40"
+    }, {
+      id: "q-41-2",
+      head: "Yönetim sisteminde ilgili prosedürler geliştirilmiş mi? Örnek formlar sunulmuş mu?"
+    }, {
+      id: "q-41-3",
+      head: "Uygulama gözlendi mi?"
+    }]
+  }), /*#__PURE__*/React.createElement(QuestionBody, {
+    id: "42",
+    head: "Y\xFCzer havuzdaki/iskeledeki/r\u0131ht\u0131mdaki/k\u0131zaktaki gemide \xE7al\u0131\u015Fma yap\u0131lmas\u0131 s\u0131ras\u0131nda al\u0131nacak \xE7evrenin korunmas\u0131yla ilgili tedbirler belirlenmi\u015F midir?",
+    items: [{
+      id: "q-42-1",
+      head: "Ek 42"
+    }, {
+      id: "q-42-2",
+      head: "Yönetim sisteminde ilgili prosedürler geliştirilmiş mi? Örnek formlar sunulmuş mu?"
+    }, {
+      id: "q-42-3",
+      head: "Uygulama gözlendi mi?"
+    }]
+  }), /*#__PURE__*/React.createElement(QuestionBody, {
+    id: "43",
+    head: "Y\xFCzer havuz ba\u011Flama plan\u0131 mevcut mu?",
+    items: [{
+      id: "q-43-1",
+      head: "Ek 43 (Onaylı planın ölçekli taratılmış kopyası sunulmuş mu?)"
+    }, {
+      id: "q-43-2",
+      head: "Onaylı Bağlama Planı ile tesisin fiili durumu uyumlu mu?"
+    }, {
+      id: "q-43-3",
+      head: "Onaylanmak üzere sunulmuş taslak Plan mevcut mu?"
+    }]
+  }), /*#__PURE__*/React.createElement(QuestionBody, {
+    id: "44",
+    head: "Y\xFCzer havuz i\u015Fletme izni belgesi olup olmad\u0131\u011F\u0131 (Y\xF6netmelik Md 14 )",
+    items: [{
+      id: "q-44-1",
+      head: "Ek 44"
+    }]
+  }), /*#__PURE__*/React.createElement(QuestionBody, {
+    id: "45",
+    head: "\xC7elik yap\u0131l\u0131 y\xFCzer havuzlar\u0131n planlar\u0131na g\xF6re konstr\xFCksiyon elemanlar\u0131n\u0131n kal\u0131nl\u0131k \r\n\xF6l\xE7\xFCm\xFCn\xFC i\xE7eren yetkilendirilmi\u015F kurulu\u015Flardan al\u0131nacak klas s\xF6rvey uygunluk raporunun be\u015F y\u0131lda bir \u0130dareye ibraz\u0131 yap\u0131lm\u0131\u015F m\u0131? (Y\xF6netmelik Md 14 (7) )",
+    items: [{
+      id: "q-45-1",
+      head: "Ek 45 (Geçerli Klas Belgesi yeterli olup taratılarak Ek olarak konulmalıdır.)"
+    }]
+  }), /*#__PURE__*/React.createElement(QuestionBody, {
+    id: "46",
+    head: "Y\xFCzer havuzun tesis d\u0131\u015F\u0131nda su arac\u0131 olarak kullan\u0131l\u0131yor ise su arac\u0131 uygunluk belgesi olup olmad\u0131\u011F\u0131 (Y\xF6netmelik Md 14 (9) )",
+    items: [{
+      id: "q-40-1",
+      head: "Ek 46"
+    }]
+  }), /*#__PURE__*/React.createElement(QuestionBody, {
+    id: "47",
+    head: "Y\xFCzer havuzun ba\u011Flanmas\u0131nda faydalan\u0131lan ekipman/donan\u0131m gerekli periyodik kontrol ve teste tabi tutulmakta m\u0131, \r\nbak\u0131m-tutumlar\u0131 yap\u0131lmakta m\u0131? (Babalar, halat, sapan, zincir ve kilitler vs.)",
+    items: [{
+      id: "q-47-1",
+      head: "Ek 47"
+    }, {
+      id: "q-47-2",
+      head: "Yönetim sisteminde ilgili prosedürler geliştirilmiş mi? Envanter takibi yapılabiliyor mu? Örnek formlar sunulmuş mu?"
+    }, {
+      id: "q-47-3",
+      head: "Muayene  ve bakım-tutum kayıt raporları sunuldu mu?"
+    }, {
+      id: "q-47-4",
+      head: "Uygulama gözlendi mi?"
+    }]
+  }), /*#__PURE__*/React.createElement(QuestionBody, {
+    id: "48",
+    head: "Tonoz, dolfen gibi ba\u011Flant\u0131 elemanlar\u0131n\u0131n, y\xFCzer havuzun ba\u011Flama plan\u0131na uygun olarak emniyetli bir \u015Fekilde \r\ntutabilece\u011Fine dair yetkilendirilmi\u015F kurulu\u015Flardan al\u0131nm\u0131\u015F rapor mevcut mu? ",
+    items: [{
+      id: "q-48-1",
+      head: "Ek 48"
+    }, {
+      id: "q-48-2",
+      head: "Yönetim sisteminde ilgili prosedürler geliştirilmiş mi? Envanter takibi yapılabiliyor mu? Örnek formlar sunulmuş mu?"
+    }, {
+      id: "q-48-3",
+      head: "Doküman içeriği Bağlama Planı ile uyumlu mu?"
+    }]
+  }), /*#__PURE__*/React.createElement(QuestionBody, {
+    id: "49",
+    head: "Enerji, ula\u015F\u0131m ve altyap\u0131 projeleri ile sanayi tesislerine y\xF6nelik \xE7elik konstr\xFCksiyonlar tersane ve tekne imal yerlerinde yap\u0131l\u0131yor mu? Yap\u0131l\u0131yor ise \u0130dareden izin al\u0131nm\u0131\u015F m\u0131? (Y\xF6netmelik Md 20 (8) )",
+    items: [{
+      id: "q-49-1",
+      head: "Ek 49 (Yapılıyor ise İzin yazısı; Yapılmıyor ise yapılmadığını beyan eden imzalı bir yazı sunulubilir.)"
+    }]
+  }), /*#__PURE__*/React.createElement(QuestionBody, {
+    id: "50",
+    head: "\u0130TDK \xFCcreti ile ilgili makbuz",
+    items: [{
+      id: "q-47-1",
+      head: "Ek 50"
     }]
   })), /*#__PURE__*/React.createElement("table", {
     className: "full-width"
