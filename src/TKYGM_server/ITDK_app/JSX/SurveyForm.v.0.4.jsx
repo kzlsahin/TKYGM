@@ -567,18 +567,18 @@ tutabileceğine dair yetkilendirilmiş kuruluşlardan alınmış rapor mevcut mu
 
                     <tr>
                         <th>Üye</th>
-                        <td></td>
-                        <td></td>
+                        <td><input id="member-name-1" className="text-state" type="text"/></td>
+                        <td><input id="member-sign-1" className="text-state" type="text"/></td>
                     </tr>
                     <tr>
                         <th>Üye</th>
-                        <td></td>
-                        <td></td>
+                        <td><input id="member-name-2" className="text-state" type="text" /></td>
+                        <td><input id="member-sign-2" className="text-state" type="text" /></td>
                     </tr>
                     <tr>
                         <th>Üye</th>
-                        <td></td>
-                        <td></td>
+                        <td><input id="member-name-3" className="text-state" type="text" /></td>
+                        <td><input id="member-sign-3" className="text-state" type="text" /></td>
                     </tr>
                 </tbody>
             </table>
