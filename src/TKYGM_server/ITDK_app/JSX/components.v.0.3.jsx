@@ -51,7 +51,7 @@ const clc = (qID) => {
 function QuestionBody(props) {
     const listItems = props.items.map(
         item =>
-            <QeestionItem key={item.id} id={item.id} head={item.head} />
+            <QeestionItem key={item.id} id={item.id} head={item.head} input={item.input} />
     );
     return (
         <article id={"q-" + props.id} className="questionary-article">
@@ -73,8 +73,14 @@ function QuestionBody(props) {
 function QeestionItem(props) {
     return (
         <tr className="questionary-item">
-            <td className="td-question">{props.head} </td>
+            <td className="td-question">{props.head} {props.input ? props.input : "" }</td>
             <td className="td-question-result"><AuditResult id={props.id} /></td>
         </tr>
     );
+}
+
+function TextInput(props) {
+    return (
+        <input id={props.name} className={"text-state" + (props.className ?? "")} type="text" placeholder={props.placeHolder} />
+    )
 }
