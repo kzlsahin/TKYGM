@@ -142,4 +142,7 @@ td {
     .questionary-article > .article-banner {
         background-image: none;
     }
+    select {
+        padding:0;
+    }
 }

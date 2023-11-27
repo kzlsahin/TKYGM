@@ -105,17 +105,31 @@ dialog {
 }
 
 @media print {
+    html {
+        padding: 0;
+        width: 210mm;
+        height: 297mm;
+    }
     body {
+        width: 210mm;
+        height: 297mm;
+        padding:0;
         background-image: url(../images/UAB-antet.jpg);
         background-position: center;
         background-repeat: no-repeat;
         background-attachment: fixed;
+        font-size: 10pt;
     }
 }
 
 @page {
+    size: A4;
+    margin-left: 1in;
+    margin-Top: 1in;
+    margin-right: 0.5in;
+    margin-bottom: 0.5in;
 
-    @top-right {
+    @top-right-corner {
         content: counter(pageNumber);
         counter-increment: pageNumber;
     }
