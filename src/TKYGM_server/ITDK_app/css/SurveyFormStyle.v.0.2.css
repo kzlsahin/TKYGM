@@ -28,14 +28,35 @@
     margin: 0 0 1rem auto;
 }
 
-.wide-column {
-    width:60%;
+.wide{
+    min-width:20rem;
 }
-.text-multiline {
+
+.full-width {
+    width: 100%;
+}
+.text-state-multiline {
     width: 100%;
     height: fit-content;
     cursor: text;
-    background-color: transparent;
+    background-color: #DDDDDD;
+}
+
+.two-line {
+    min-height: 2.2em;
+}
+
+.three-line {
+    min-height: 3.3em;
+}
+.four-line {
+    min-height: 4.4em;
+}
+.five-line {
+    min-height: 5.5em;
+}
+.six-line {
+    min-height: 6.6em;
 }
 article {
     display: grid;

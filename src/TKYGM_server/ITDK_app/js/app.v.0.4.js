@@ -13,6 +13,10 @@ const setData = () => {
     for (let inp of inputs) {
         surveyData[inp.id] = inp.value;
     }
+    let multilineTexts = document.getElementsByClassName("text-state-multiline");
+    for (let textDiv of multilineTexts) {
+        surveyData[textDiv.id] = textDiv.innerHTML;
+    }
     let selectables = document.getElementsByClassName("selection-state");
     for (let selectable of selectables) {
         surveyData[selectable.id] = selectable.value;
@@ -24,6 +28,10 @@ const importData = (state) => {
     let inputs = document.getElementsByClassName("text-state");
     for (let inp of inputs) {
         inp.value = state[inp.id] ?? "";
+    }
+    let multilineTexts = document.getElementsByClassName("text-state-multiline");
+    for (let textDiv of multilineTexts) {
+        textDiv.innerHTML = surveyData[textDiv.id] ?? "";
     }
     let selectables = document.getElementsByClassName("selection-state");
     for (let selectable of selectables) {

@@ -41,7 +41,7 @@ function SurveyForm() {
                                 Tesis adresi
                             </td>
                             <td>
-                                <div id="facility-address" className="text-state text-multiline" contentEditable></div>
+                                <div id="facility-address" className="text-state-multiline wide two-line" contentEditable></div>
                             </td>
                         </tr>
                         <tr>
@@ -49,7 +49,7 @@ function SurveyForm() {
                                 Denetim sırasında Komisyona eşlik eden tesis işleticisi/yetkilendirilmiş kişi bilgisi
                             </td>
                             <td>
-                                <div id="representative-person-name" className="text-state text-multiline-wide" contentEditable></div>
+                                <div id="representative-person-name" className="text-state-multiline wide two-line" contentEditable></div>
                             </td>
                         </tr>
                         <tr>
