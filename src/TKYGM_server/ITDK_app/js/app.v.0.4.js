@@ -3,7 +3,7 @@ export { DirectoryManager }
 let root;
 let surveyData = {};
 const AppState = {
-    ongoingSurvey: true,
+    ongoingSurvey: false,
     modified: true,
     folderName: "",
 }
@@ -132,6 +132,7 @@ const _openNewSurvey = async () => {
     newSurveyForm();
     AppState.ongoingSurvey = true;
     showForm();
+    AppState.ongoingSurvey = true;
 }
 
 const _loadSurveyFromFile = async () => {
@@ -173,7 +174,7 @@ const SaveSurvey = async () => {
         console.log("servey data is content serialized.");
         await DirectoryManager.saveFile("survey.json", content);
         console.log("servey data is saved.");
-        await fm.DownloadFilesAsZip(DirectoryManager.handler, fm.ReplaceExtension(DirectoryManager.directory, 'survey' ));
+        await fm.DownloadFilesAsZip(DirectoryManager.handler, fm.ReplaceExtension(DirectoryManager.directory, 'zip' ));
         //AppState.modified = false;
     }
     catch (err) {
