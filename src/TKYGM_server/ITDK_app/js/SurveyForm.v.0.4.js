@@ -16,11 +16,11 @@ function SurveyForm() {
     className: "bold"
   }, "TESIS ADI:"), /*#__PURE__*/React.createElement("td", {
     colSpan: "3"
-  }, /*#__PURE__*/React.createElement("input", {
-    id: "facility-name",
-    className: "text-state",
-    type: "text",
-    placeholder: "Tesis Ad\u0131n\u0131 Girin"
+  }, /*#__PURE__*/React.createElement(TextInput, {
+    name: "facility-name",
+    className: "full-width",
+    title: "tesis ad\u0131",
+    placeHolder: "Tesis Ad\u0131n\u0131 Girin"
   }))), /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement(SurveyType, {
     id: "survet-type"
   })), /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement(FacilityType, {
@@ -42,11 +42,11 @@ function SurveyForm() {
     className: "wide-column"
   })), /*#__PURE__*/React.createElement("tbody", null, /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", null, "Tesis adresi"), /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement("div", {
     id: "facility-address",
-    className: "text-state text-multiline",
+    className: "text-state-multiline wide two-line",
     contentEditable: true
   }))), /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", null, "Denetim s\u0131ras\u0131nda Komisyona e\u015Flik eden tesis i\u015Fleticisi/yetkilendirilmi\u015F ki\u015Fi bilgisi"), /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement("div", {
     id: "representative-person-name",
-    className: "text-state text-multiline-wide",
+    className: "text-state-multiline wide two-line",
     contentEditable: true
   }))), /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", null, "\u0130TDK \xFCcreti ile ilgili makbuz Ek 50 olarak kaydedilir."), /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement("select", {
     id: "payment",
@@ -113,7 +113,12 @@ function SurveyForm() {
       head: "Ek 4"
     }, {
       id: "q-4-2",
-      head: "Ön İzinine konu yüzölçüm:-"
+      head: "Ön İzinine konu yüzölçüm:-",
+      input: /*#__PURE__*/React.createElement(TextInput, {
+        name: "acreage",
+        title: "y\xFCz \xF6l\xE7\xFCm\xFC",
+        placeHolder: "0.00"
+      })
     }, {
       id: "q-4-3",
       head: "Kullanma iznine konu yüzölçüm:   m2"
@@ -721,7 +726,11 @@ function SurveyForm() {
     className: "vertical-text"
   }, "Di\u011Fer Hususlar")), /*#__PURE__*/React.createElement("td", {
     colSpan: "2"
-  })), /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", {
+  }, /*#__PURE__*/React.createElement("div", {
+    id: "txt-other-issues",
+    className: "text-state-multiline six-line",
+    contentEditable: true
+  }))), /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", {
     colSpan: "3"
   }, "*Tersane, Tekne \u0130mal ve \xC7ekek Yeri Y\xF6netmeli\u011Fi'nin 19'uncu maddesinin 6'\u0131nc\u0131 f\u0131kras\u0131 / 12'nci maddenin 1'inci f\u0131kras\u0131 kapsam\u0131nda")), /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", {
     colSpan: "3"
@@ -729,5 +738,29 @@ function SurveyForm() {
     colSpan: "3"
   }, "Denetim, bu dok\xFCmanda yer alan tarihte mesai saatleri i\xE7erisinde tesiste yap\u0131lan genel g\xF6zlemler, rastgele \xF6rnekleme ile edinilen bilgiler ve firma yetkilisince yap\u0131lan beyanlar do\u011Frultusunda haz\u0131rlanm\u0131\u015Ft\u0131r.")), /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", {
     colSpan: "3"
-  }, "\u0130\u015F bu rapor tesis incelemesi esnas\u0131nda taraf\u0131m\u0131zca imza alt\u0131na al\u0131nm\u0131\u015Ft\u0131r.")))), /*#__PURE__*/React.createElement("table", null, /*#__PURE__*/React.createElement("tbody", null, /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("th", null), /*#__PURE__*/React.createElement("td", null, "Ad\u0131 Soyad\u0131"), /*#__PURE__*/React.createElement("td", null, "G\xF6revlendirildi\u011Fi Birim / Unvan / \u0130mza")), /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("th", null, "\xDCye"), /*#__PURE__*/React.createElement("td", null), /*#__PURE__*/React.createElement("td", null)), /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("th", null, "\xDCye"), /*#__PURE__*/React.createElement("td", null), /*#__PURE__*/React.createElement("td", null)), /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("th", null, "\xDCye"), /*#__PURE__*/React.createElement("td", null), /*#__PURE__*/React.createElement("td", null)))));
+  }, "\u0130\u015F bu rapor tesis incelemesi esnas\u0131nda taraf\u0131m\u0131zca imza alt\u0131na al\u0131nm\u0131\u015Ft\u0131r.")))), /*#__PURE__*/React.createElement("table", null, /*#__PURE__*/React.createElement("tbody", null, /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("th", null), /*#__PURE__*/React.createElement("td", null, "Ad\u0131 Soyad\u0131"), /*#__PURE__*/React.createElement("td", null, "G\xF6revlendirildi\u011Fi Birim / Unvan / \u0130mza")), /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("th", null, "\xDCye"), /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement("input", {
+    id: "member-name-1",
+    className: "text-state",
+    type: "text"
+  })), /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement("input", {
+    id: "member-sign-1",
+    className: "text-state",
+    type: "text"
+  }))), /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("th", null, "\xDCye"), /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement("input", {
+    id: "member-name-2",
+    className: "text-state",
+    type: "text"
+  })), /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement("input", {
+    id: "member-sign-2",
+    className: "text-state",
+    type: "text"
+  }))), /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("th", null, "\xDCye"), /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement("input", {
+    id: "member-name-3",
+    className: "text-state",
+    type: "text"
+  })), /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement("input", {
+    id: "member-sign-3",
+    className: "text-state",
+    type: "text"
+  }))))));
 }
