@@ -62,7 +62,8 @@ function QuestionBody(props) {
   const listItems = props.items.map(item => /*#__PURE__*/React.createElement(QeestionItem, {
     key: item.id,
     id: item.id,
-    head: item.head
+    head: item.head,
+    input: item.input
   }));
   return /*#__PURE__*/React.createElement("article", {
     id: "q-" + props.id,
@@ -83,9 +84,17 @@ function QeestionItem(props) {
     className: "questionary-item"
   }, /*#__PURE__*/React.createElement("td", {
     className: "td-question"
-  }, props.head, " "), /*#__PURE__*/React.createElement("td", {
+  }, props.head, " ", props.input ? props.input : ""), /*#__PURE__*/React.createElement("td", {
     className: "td-question-result"
   }, /*#__PURE__*/React.createElement(AuditResult, {
     id: props.id
   })));
+}
+function TextInput(props) {
+  return /*#__PURE__*/React.createElement("input", {
+    id: props.name,
+    className: "text-state" + (props.className ?? ""),
+    type: "text",
+    placeholder: props.placeHolder
+  });
 }
