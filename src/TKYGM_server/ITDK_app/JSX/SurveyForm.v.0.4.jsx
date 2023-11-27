@@ -541,7 +541,7 @@ tutabileceğine dair yetkilendirilmiş kuruluşlardan alınmış rapor mevcut mu
                         <th>
                             <span className="vertical-text">Diğer Hususlar</span>
                         </th>
-                        <td colSpan="2"></td>
+                        <td colSpan="2"><div id="txt-other-issues" className="text-state-multiline six-line" contentEditable></div></td>
                     </tr>
                     <tr>
                         <td colSpan="3">*Tersane, Tekne İmal ve Çekek Yeri Yönetmeliği'nin 19'uncu maddesinin 6'ıncı fıkrası / 12'nci maddenin 1'inci fıkrası kapsamında</td>

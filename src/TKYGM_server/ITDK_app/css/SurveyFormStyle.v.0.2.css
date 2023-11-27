@@ -171,4 +171,8 @@ td {
     select {
         padding:0;
     }
+    .text-state-multiline{
+        background-color:transparent;
+    }
+
 }
