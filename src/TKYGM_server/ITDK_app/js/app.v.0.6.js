@@ -25,19 +25,29 @@ const setData = () => {
 
 const importData = (state) => {
     console.log("input fields are being set");
+    console.table(state);
     let inputs = document.getElementsByClassName("text-state");
+    console.log(inputs);
     for (let inp of inputs) {
-        inp.value = state[inp.id] ?? "";
+        console.log(inp);
+        inp.value = state?.[inp.id] ?? "";
+        console.log(inp.value);
     }
     let multilineTexts = document.getElementsByClassName("text-state-multiline");
+    console.log(multilineTexts);
     for (let textDiv of multilineTexts) {
-        textDiv.innerHTML = surveyData[textDiv.id] ?? "";
+        console.log(textDiv);
+        textDiv.innerHTML = surveyData?.[textDiv.id] ?? "";
+        console.log(textDiv.innerHTM);
+
     }
     let selectables = document.getElementsByClassName("selection-state");
+    console.log(selectables);
+
     for (let selectable of selectables) {
-        console.log(state[selectable.id]);
         console.log(selectable);
-        selectable.value = state[selectable.id] ?? "0";
+        console.log(state?.[selectable.id]);
+        selectable.value = state?.[selectable.id] ?? "0";
     }
     console.log("input fields are set");
 };
@@ -129,8 +139,9 @@ const loadSurvey = async () => {
         console.log("the document couldn't be read!");
     }
     newSurveyForm();
-    importData(surveyData);
     showForm();
+    
+    setTimeout(_ => { importData(surveyData); }, 10);
     return res;
 };
 const _openNewSurvey = async () => {
