@@ -22,7 +22,7 @@ const BASEURL = `https://kzlsahin.online/TKYGM/ITDK-v1`;
 const PRECACHE_URLS = [
     BASEURL + '/',
     BASEURL + '/css/style.v.0.3.css',
-    BASEURL + '/css/SurveyFormStyle.v.0.3.css',
+    BASEURL + '/css/SurveyFormStyle.v.0.4.css',
     BASEURL + '/css/ControlWidgetStyle.v.0.1.css',
     BASEURL + '/images/UAB_Logo.png',
     BASEURL + '/images/UAB-antet.jpg',

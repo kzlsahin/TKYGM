@@ -29,7 +29,7 @@
 }
 
 .wide{
-    min-width:20rem;
+    min-width:Min(20rem, 50vw);
 }
 
 .full-width {
